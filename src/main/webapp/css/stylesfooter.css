@@ -10,3 +10,8 @@
    padding-top: 15px;
    
 }
+.container-header2 .align-items-center{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
