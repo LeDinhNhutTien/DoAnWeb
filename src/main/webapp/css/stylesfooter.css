@@ -1,0 +1,14 @@
+.site-footer__copyright{
+    text-align: center;
+    background-color: aqua;
+    width: 100%;
+    padding: 0%;
+    height: 50px;
+   
+}
+
+.container-header2 .align-items-center{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
