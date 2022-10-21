@@ -5849,7 +5849,7 @@ a.close.disabled {
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 550px;
+  height: 525px;
 }
 
 .carousel-inner::after {
@@ -7465,7 +7465,7 @@ button.bg-dark:focus {
   margin-right: 3rem !important;
 }
 .mt-153{
-  margin-top: 155px !important;
+  margin-top: 130px !important;
 }
 .mb-5,
 .my-5 {
