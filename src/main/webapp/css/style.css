@@ -9636,10 +9636,16 @@ a.text-dark:hover, a.text-dark:focus {
 
 
 }
-.icon-media .icon img{
+.icon-media .icon img {
   width: 30px;
 
 }
-.icon-media .icon
+.icon-media {
+  list-style-type: none;
+  display: flex;
+  gap: 60px;
+  margin-top: 15px;
+}
+
 
 
