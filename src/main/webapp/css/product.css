@@ -99,6 +99,7 @@ p,span,a {
     margin-bottom: 20px;
     cursor: pointer;
     text-align: center;
+    height: 55px;
 }
 #product-shop .product-hot .products .product-item .product-deal{
     display: flex;
@@ -217,6 +218,8 @@ p,span,a {
     line-height: 27px;
     margin-bottom: 20px;
     cursor: pointer;
+    text-align: center;
+    height: 55px;
 }
 #product-shop .product-selling .products .product-item .product-deal{
     display: flex;
@@ -349,6 +352,8 @@ p,span,a {
     line-height: 27px;
     margin-bottom: 20px;
     cursor: pointer;
+    text-align: center;
+    height: 55px;
 }
 #product-shop .product-sale .products .product-item .product-deal{
     display: flex;
@@ -411,3 +416,121 @@ p,span,a {
     font-weight: 700;
     margin-bottom: 30px;
 }
+/*Css của thẻ shop*/
+.shop-categories .shop-list .shop-item img{
+    width: 65px;
+    height: 70px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+.shop-categories .shop-list .shop-item .shop-categories_karofi,
+.shop-categories .shop-list .shop-item .shop-categories_huyndai,
+.shop-categories .shop-list .shop-item .shop-categories_kangaroo,
+.shop-categories .shop-list .shop-item .shop-categories_sunhouse{
+    color: #6F6F6F;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 28px;
+}
+.shop-overview .headline{
+    text-align: center;
+    margin: 40px 0;
+}
+.shop-overview .headline h3{
+    font-size: 18px;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #bebebe;
+    display: inline-block;
+    background: #121111;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.shop-overview .products{
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.shop-overview .products .product-item{
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.shop-overview .products .product-item .product-image .product-image-maskup img{
+    width: 220px;
+    height: 220px;
+}
+.shop-overview .products .product-item .product-image .product-image-maskup img:hover{
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+.shop-overview .products .product-item .item-icons{
+    display: flex;
+    border: 1px solid #555;
+    border-radius: 8px;
+    margin: 30px auto;
+    width: 116px;
+    text-align: center;
+}
+.shop-overview .products .product-item .product-title{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    height: 55px;
+}
+.shop-overview .products .product-item .product-deal{
+    display: flex;
+    margin: 20px 20px;
+}
+.shop-overview .products .product-item .product-deal .product-buy{
+    padding: 10px 15px;
+    background: #ee4d2d;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.shop-overview .products .product-item .product-deal .product-price {
+    font-size: 18px;
+    color: #23b1e5;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 10px;
+}
+.shop-overview .products .product-item{
+    text-align: center;
+    padding: 15px 0 30px 0;
+}
+.shop-overview .products .product-item .product-detail .product-cat{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    padding: 5px 20px;
+    background: #cfcfcf;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.site-footer__copyright{
+    text-align: center;
+    background-color: aqua;
+    width: 100%;
+    padding: 0%;
+    height: 50px;
+
+}
+.container-header2 .align-items-center{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+/*CSS của product-karofi*/
