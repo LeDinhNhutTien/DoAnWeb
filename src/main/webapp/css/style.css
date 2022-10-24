@@ -369,7 +369,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
 }
 
 @media (max-width: 1200px) {
@@ -7407,7 +7407,7 @@ button.bg-dark:focus {
 
 .mt-3,
 .my-3 {
-  margin-top: 1rem !important;
+  margin-top: 0.65rem !important;
 }
 
 .mr-3,
@@ -7553,7 +7553,7 @@ button.bg-dark:focus {
 
 .pt-3,
 .py-3 {
-  padding-top: 4px !important;
+  padding-top: 10px !important;
 }
 
 .pr-3,
@@ -7563,7 +7563,7 @@ button.bg-dark:focus {
 
 .pb-3,
 .py-3 {
-  padding-bottom: 2px !important;
+  padding-bottom: 10px !important;
 }
 
 .pl-3,
@@ -9279,6 +9279,11 @@ button.bg-dark:focus {
 
 .text-primary {
   color: #00aeef !important;
+}
+.text-icon{
+  border: 1px solid #00aeef;
+  padding: 5px;
+  border-radius: 50%;
 }
 
 a.text-primary:hover, a.text-primary:focus {
