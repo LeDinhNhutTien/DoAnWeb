@@ -7553,7 +7553,7 @@ button.bg-dark:focus {
 
 .pt-3,
 .py-3 {
-  padding-top: 4px !important;
+  padding-top: 7px !important;
 }
 
 .pr-3,
@@ -7563,7 +7563,7 @@ button.bg-dark:focus {
 
 .pb-3,
 .py-3 {
-  padding-bottom: 2px !important;
+  padding-bottom: 7px !important;
 }
 
 .pl-3,
@@ -7601,7 +7601,7 @@ button.bg-dark:focus {
 
 .pt-5,
 .py-5 {
-  padding-top: 3rem !important;
+  padding-top: 1rem !important;
 }
 
 .pr-5,
@@ -9184,7 +9184,12 @@ button.bg-dark:focus {
 .text-right {
   text-align: right !important;
 }
-
+.gio_hang:hover{
+  opacity: 0.6;
+}
+.user:hover{
+  opacity: 0.6;
+}
 .text-center {
   text-align: center !important;
 }
@@ -9472,7 +9477,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .font-weight-semi-bold {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 [class^=flaticon-]:before,
@@ -9484,7 +9489,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .navbar-light .navbar-nav .nav-link {
-
+  padding-right: 73px;
   color: #1C1C1C ;
   outline: none;
 }
