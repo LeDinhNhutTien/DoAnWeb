@@ -131,11 +131,13 @@ p,span,a {
 #product-shop .product-hot .products .product-item .product-detail .product-cat{
     text-decoration: none;
     color: #fff;
-    font-weight: 700;
-    padding: 5px 20px;
+    font-weight: 600;
+    padding: 3px 16px;
     background: #cfcfcf;
     border-radius: 15px;
     cursor: pointer;
+    font-size: 16px;
+
 }
 #product-shop .product-hot .see-more button{
     border: 0;
@@ -245,12 +247,14 @@ p,span,a {
 #product-shop .product-selling .products .product-item .product-detail .product-cat{
     text-decoration: none;
     color: #fff;
-    font-weight: 700;
-    padding: 5px 20px;
+    font-weight: 600;
+    padding: 3px 16px;
     background: #cfcfcf;
     border-radius: 15px;
     cursor: pointer;
+    font-size: 16px;
 }
+
 #product-shop .product-selling .see-more button{
     border: 0;
     border-radius: 30px;
@@ -400,11 +404,12 @@ p,span,a {
 #product-shop .product-sale .products .product-item .product-detail .product-cat{
     text-decoration: none;
     color: #fff;
-    font-weight: 700;
-    padding: 5px 20px;
+    font-weight: 600;
+    padding: 3px 16px;
     background: #cfcfcf;
     border-radius: 15px;
     cursor: pointer;
+    font-size: 16px;
 }
 #product-shop .product-sale .see-more button{
     border: 0;
@@ -513,11 +518,12 @@ p,span,a {
 .shop-overview .products .product-item .product-detail .product-cat{
     text-decoration: none;
     color: #fff;
-    font-weight: 700;
-    padding: 5px 20px;
+    font-weight: 600;
+    padding: 3px 16px;
     background: #cfcfcf;
     border-radius: 15px;
     cursor: pointer;
+    font-size: 16px;
 }
 .site-footer__copyright{
     text-align: center;
