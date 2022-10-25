@@ -9626,10 +9626,6 @@ a.text-dark:hover, a.text-dark:focus {
   border-radius:15px  15px 0 0 ;
  
 }
-.site-footer__copyright p {
-  padding-top: 13px;
-
-}
 /*-- Form box--*/
 .col-md-4 .form-group input{
   border-radius: 10px;
