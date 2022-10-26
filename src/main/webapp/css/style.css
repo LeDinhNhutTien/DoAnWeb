@@ -9650,4 +9650,11 @@ a.text-dark:hover, a.text-dark:focus {
 
 
 /*---GioiThieu---*/
-
+#GioiThieu{
+  font-family: Tahoma;
+}
+#GioiThieu .about-vision {
+  background: #2cc2fa;
+  color: black;
+  min-height: 300px;
+}
