@@ -385,12 +385,12 @@ p,span,a {
     padding-left: 10px;
 }
 #product-shop .product-sale .products .product-item .product-deal .product-price-sale .empty {
-    width: 130px;
+    width: 135px;
     height: 1px;
     background: #6c757d;
     position: absolute;
     top: 14px;
-    left: 6px;
+    left: 20px;
 }
 #product-shop .product-sale .products .product-item .product-deal .product-price-sale .price-sale {
     font-size: 18px;
