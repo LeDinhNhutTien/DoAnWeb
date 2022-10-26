@@ -9647,14 +9647,16 @@ a.text-dark:hover, a.text-dark:focus {
   justify-content: center;
   padding: 0;
 }
-/*header
- margin: 0;
-    margin-left: auto;
-    margin-right: auto;
-        display: flex;
-    margin-right: -15px;
-    margin-left: -15px;
-    flex-wrap: wrap;
-    justify-content: center;*/
 
 
+/*---GioiThieu---*/
+#GioiThieu{
+  font-family: Tahoma;
+
+}
+#GioiThieu .about-vision {
+font-size: x-large;
+  color: black;
+
+
+}
