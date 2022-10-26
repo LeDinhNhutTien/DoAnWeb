@@ -539,4 +539,169 @@ p,span,a {
     top: 0;
 }
 
-/*CSS của product-karofi*/
+/*CSS của product-detail*/
+.product_karofi-detail .product-detail{
+    display: flex;
+}
+.product_karofi-detail .product-detail img{
+    width: 400px;
+    height: 500px;
+    border: 1px solid #d5cfcf;
+    box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+    margin-right: 40px;
+}
+.product_karofi-detail .product-detail .product-info{
+    width: 600px;
+    height: auto;
+}
+.product_karofi-detail .product-detail .product-info .product-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+.product_karofi-detail .product-detail .product-info .product-price{
+    font-size: 20px;
+    color: #23b1e5;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.product_karofi-detail .product-detail .product-info .product-brand{
+    font-size: 18px;
+    color: red;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+.product_karofi-detail .product-detail .product-info .product-content{
+    margin-left: 20px;
+    border: 2px dashed #e03232;
+    padding: 20px;
+}
+.product_karofi-detail .product-detail .product-info .product-content p{
+    font-size: 16px;
+    color: #0f0f0f;
+    font-weight: 400;
+}
+.product_karofi-detail .product-detail .product-info .product-content .product-item i{
+    font-size: 18px;
+    padding-top: 3px;
+    padding-right: 10px;
+    color: green !important;
+}
+.product_karofi-detail .product-choose .product-deal{
+    display: flex;
+    margin-top: 30px;
+    width: 200px;
+    background: #ee4d2d;
+    height: 40px;
+    align-items: center;
+    margin-left: 45%;
+    cursor: pointer;
+}
+.product_karofi-detail .product-choose .product-deal i{
+    padding-right: 7px;
+    font-size: 16px;
+    color: #fff !important;
+    padding-left: 10px;
+}
+.product_karofi-detail .product-deal .product-cart{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+.product_karofi-detail .product-choose .product-buy{
+    display: flex;
+    margin-top: 30px;
+    width: 100px;
+    background: #ee4d2d;
+    height: 40px;
+    align-items: center;
+    padding-left: 15px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 20px
+}
+.product_karofi-detail .product-related .product-title{
+    text-align: center;
+    margin: 40px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #111;
+}
+.product_karofi-detail .product-related .product{
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    margin: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.product_karofi-detail .product-related .product .product-item{
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.product_karofi-detail .product-related .product .product-item .product-image .product-image-maskup img{
+    width: 220px;
+    height: 220px;
+}
+.product_karofi-detail .product-related .product .product-item .product-image .product-image-maskup img:hover{
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+.product_karofi-detail .product-related .product .product-item .item-icons{
+    display: flex;
+    border: 1px solid #555;
+    border-radius: 8px;
+    margin: 30px auto;
+    width: 116px;
+    text-align: center;
+}
+.product_karofi-detail .product-related .product .product-item .product-title{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    height: 55px;
+}
+.product_karofi-detail .product-related .product .product-item .product-deal{
+    display: flex;
+    margin: 20px 20px;
+}
+.product_karofi-detail .product-related .product .product-item .product-deal .product-buy{
+    padding: 10px 15px;
+    background: #ee4d2d;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.product_karofi-detail .product-related .product .product-item .product-deal .product-price {
+    font-size: 18px;
+    color: #23b1e5;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 10px;
+}
+.product_karofi-detail .product-related .product .product-item{
+    text-align: center;
+    padding: 15px 0 30px 0;
+}
+.product_karofi-detail .product-related .product .product-item .product-detail .product-cat{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 3px 16px;
+    background: #cfcfcf;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
