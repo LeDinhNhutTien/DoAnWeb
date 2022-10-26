@@ -540,57 +540,87 @@ p,span,a {
 }
 
 /*CSS của product-detail*/
-.product_karofi-detail .product-detail{
+.product_karofi-detail .product-detail,
+.product_hyundai-detail .product-detail,
+.product_kangaroo-detail .product-detail,
+.product_sunhouse-detail .product-detail{
     display: flex;
 }
-.product_karofi-detail .product-detail img{
+.product_karofi-detail .product-detail img,
+.product_hyundai-detail .product-detail img,
+.product_kangaroo-detail .product-detail img,
+.product_sunhouse-detail .product-detail img{
     width: 400px;
     height: 500px;
     border: 1px solid #d5cfcf;
     box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
     margin-right: 40px;
 }
-.product_karofi-detail .product-detail .product-info{
+.product_karofi-detail .product-detail .product-info,
+.product_hyundai-detail .product-detail .product-info,
+.product_kangaroo-detail .product-detail .product-info,
+.product_sunhouse-detail .product-detail .product-info{
     width: 600px;
     height: auto;
 }
-.product_karofi-detail .product-detail .product-info .product-title{
+.product_karofi-detail .product-detail .product-info .product-title,
+.product_hyundai-detail .product-detail .product-info .product-title,
+.product_kangaroo-detail .product-detail .product-info .product-title,
+.product_sunhouse-detail .product-detail .product-info .product-title{
     font-size: 20px;
     font-weight: 600;
     color: #111;
     margin-bottom: 15px;
     margin-left: 20px;
 }
-.product_karofi-detail .product-detail .product-info .product-price{
+.product_karofi-detail .product-detail .product-info .product-price,
+.product_hyundai-detail .product-detail .product-info .product-price,
+.product_kangaroo-detail .product-detail .product-info .product-price,
+.product_sunhouse-detail .product-detail .product-info .product-price{
     font-size: 20px;
     color: #23b1e5;
     font-weight: 600;
     margin-left: 20px;
     margin-bottom: 10px;
 }
-.product_karofi-detail .product-detail .product-info .product-brand{
+.product_karofi-detail .product-detail .product-info .product-brand,
+.product_hyundai-detail .product-detail .product-info .product-brand,
+.product_kangaroo-detail .product-detail .product-info .product-brand,
+.product_sunhouse-detail .product-detail .product-info .product-brand{
     font-size: 18px;
     color: red;
     margin-bottom: 10px;
     margin-left: 20px;
 }
-.product_karofi-detail .product-detail .product-info .product-content{
+.product_karofi-detail .product-detail .product-info .product-content,
+.product_hyundai-detail .product-detail .product-info .product-content,
+.product_kangaroo-detail .product-detail .product-info .product-content,
+.product_sunhouse-detail .product-detail .product-info .product-content{
     margin-left: 20px;
     border: 2px dashed #e03232;
     padding: 20px;
 }
-.product_karofi-detail .product-detail .product-info .product-content p{
+.product_karofi-detail .product-detail .product-info .product-content p,
+.product_hyundai-detail .product-detail .product-info .product-content p,
+.product_kangaroo-detail .product-detail .product-info .product-content p,
+.product_sunhouse-detail .product-detail .product-info .product-content p{
     font-size: 16px;
     color: #0f0f0f;
     font-weight: 400;
 }
-.product_karofi-detail .product-detail .product-info .product-content .product-item i{
+.product_karofi-detail .product-detail .product-info .product-content .product-item i,
+.product_hyundai-detail .product-detail .product-info .product-content .product-item i,
+.product_kangaroo-detail .product-detail .product-info .product-content .product-item i,
+.product_sunhouse-detail .product-detail .product-info .product-content .product-item i{
     font-size: 18px;
     padding-top: 3px;
     padding-right: 10px;
     color: green !important;
 }
-.product_karofi-detail .product-choose .product-deal{
+.product_karofi-detail .product-choose .product-deal,
+.product_hyundai-detail .product-choose .product-deal,
+.product_kangaroo-detail .product-choose .product-deal,
+.product_sunhouse-detail .product-choose .product-deal{
     display: flex;
     margin-top: 30px;
     width: 200px;
@@ -600,18 +630,27 @@ p,span,a {
     margin-left: 45%;
     cursor: pointer;
 }
-.product_karofi-detail .product-choose .product-deal i{
+.product_karofi-detail .product-choose .product-deal i,
+.product_hyundai-detail .product-choose .product-deal i,
+.product_kangaroo-detail .product-choose .product-deal i,
+.product_sunhouse-detail .product-choose .product-deal i{
     padding-right: 7px;
     font-size: 16px;
     color: #fff !important;
     padding-left: 10px;
 }
-.product_karofi-detail .product-deal .product-cart{
+.product_karofi-detail .product-deal .product-cart,
+.product_hyundai-detail .product-deal .product-cart,
+.product_kangaroo-detail .product-deal .product-cart,
+.product_sunhouse-detail .product-deal .product-cart{
     color: #fff;
     font-size: 16px;
     font-weight: 500;
 }
-.product_karofi-detail .product-choose .product-buy{
+.product_karofi-detail .product-choose .product-buy,
+.product_hyundai-detail .product-choose .product-buy,
+.product_kangaroo-detail .product-choose .product-buy,
+.product_sunhouse-detail .product-choose .product-buy{
     display: flex;
     margin-top: 30px;
     width: 100px;
@@ -623,14 +662,20 @@ p,span,a {
     cursor: pointer;
     margin-left: 20px
 }
-.product_karofi-detail .product-related .product-title{
+.product_karofi-detail .product-related .product-title,
+.product_hyundai-detail .product-related .product-title,
+.product_kangaroo-detail .product-related .product-title,
+.product_sunhouse-detail .product-related .product-title{
     text-align: center;
     margin: 40px 0;
     font-size: 24px;
     font-weight: 600;
     color: #111;
 }
-.product_karofi-detail .product-related .product{
+.product_karofi-detail .product-related .product,
+.product_hyundai-detail .product-related .product,
+.product_kangaroo-detail .product-related .product,
+.product_sunhouse-detail .product-related .product{
     padding: 0;
     list-style: none;
     width: 100%;
@@ -639,21 +684,33 @@ p,span,a {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.product_karofi-detail .product-related .product .product-item{
+.product_karofi-detail .product-related .product .product-item,
+.product_hyundai-detail .product-related .product .product-item,
+.product_kangaroo-detail .product-related .product .product-item,
+.product_sunhouse-detail .product-related .product .product-item{
     box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
     width: 100%;
     height: 100%;
     display: block;
 }
-.product_karofi-detail .product-related .product .product-item .product-image .product-image-maskup img{
+.product_karofi-detail .product-related .product .product-item .product-image .product-image-maskup img,
+.product_hyundai-detail .product-related .product .product-item .product-image .product-image-maskup img,
+.product_kangaroo-detail .product-related .product .product-item .product-image .product-image-maskup img,
+.product_sunhouse-detail .product-related .product .product-item .product-image .product-image-maskup img{
     width: 220px;
     height: 220px;
 }
-.product_karofi-detail .product-related .product .product-item .product-image .product-image-maskup img:hover{
+.product_karofi-detail .product-related .product .product-item .product-image .product-image-maskup img:hover,
+.product_hyundai-detail .product-related .product .product-item .product-image .product-image-maskup img:hover,
+.product_kangaroo-detail .product-related .product .product-item .product-image .product-image-maskup img:hover,
+.product_sunhouse-detail .product-related .product .product-item .product-image .product-image-maskup img:hover{
     transition: 0.5s;
     transform: scale(1.2);
 }
-.product_karofi-detail .product-related .product .product-item .item-icons{
+.product_karofi-detail .product-related .product .product-item .item-icons,
+.product_hyundai-detail .product-related .product .product-item .item-icons,
+.product_kangaroo-detail .product-related .product .product-item .item-icons,
+.product_sunhouse-detail .product-related .product .product-item .item-icons{
     display: flex;
     border: 1px solid #555;
     border-radius: 8px;
@@ -661,7 +718,10 @@ p,span,a {
     width: 116px;
     text-align: center;
 }
-.product_karofi-detail .product-related .product .product-item .product-title{
+.product_karofi-detail .product-related .product .product-item .product-title,
+.product_hyundai-detail .product-related .product .product-item .product-title,
+.product_kangaroo-detail .product-related .product .product-item .product-title,
+.product_sunhouse-detail .product-related .product .product-item .product-title{
     font-size: 20px;
     font-weight: 600;
     line-height: 27px;
@@ -669,11 +729,17 @@ p,span,a {
     cursor: pointer;
     height: 55px;
 }
-.product_karofi-detail .product-related .product .product-item .product-deal{
+.product_karofi-detail .product-related .product .product-item .product-deal,
+.product_hyundai-detail .product-related .product .product-item .product-deal,
+.product_kangaroo-detail .product-related .product .product-item .product-deal,
+.product_sunhouse-detail .product-related .product .product-item .product-deal{
     display: flex;
     margin: 20px 20px;
 }
-.product_karofi-detail .product-related .product .product-item .product-deal .product-buy{
+.product_karofi-detail .product-related .product .product-item .product-deal .product-buy,
+.product_hyundai-detail .product-related .product .product-item .product-deal .product-buy,
+.product_kangaroo-detail .product-related .product .product-item .product-deal .product-buy,
+.product_sunhouse-detail .product-related .product .product-item .product-deal .product-buy{
     padding: 10px 15px;
     background: #ee4d2d;
     color: #fff;
@@ -681,7 +747,10 @@ p,span,a {
     border-radius: 8px;
     cursor: pointer;
 }
-.product_karofi-detail .product-related .product .product-item .product-deal .product-price {
+.product_karofi-detail .product-related .product .product-item .product-deal .product-price,
+.product_hyundai-detail .product-related .product .product-item .product-deal .product-price,
+.product_kangaroo-detail .product-related .product .product-item .product-deal .product-price,
+.product_sunhouse-detail .product-related .product .product-item .product-deal .product-price{
     font-size: 18px;
     color: #23b1e5;
     font-weight: 600;
@@ -690,11 +759,17 @@ p,span,a {
     cursor: pointer;
     padding-left: 10px;
 }
-.product_karofi-detail .product-related .product .product-item{
+.product_karofi-detail .product-related .product .product-item,
+.product_hyundai-detail .product-related .product .product-item,
+.product_kangaroo-detail .product-related .product .product-item,
+.product_sunhouse-detail .product-related .product .product-item{
     text-align: center;
     padding: 15px 0 30px 0;
 }
-.product_karofi-detail .product-related .product .product-item .product-detail .product-cat{
+.product_karofi-detail .product-related .product .product-item .product-detail .product-cat,
+.product_hyundai-detail .product-related .product .product-item .product-detail .product-cat,
+.product_kangaroo-detail .product-related .product .product-item .product-detail .product-cat,
+.product_sunhouse-detail .product-related .product .product-item .product-detail .product-cat{
     text-decoration: none;
     color: #fff;
     font-weight: 600;
