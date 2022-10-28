@@ -103,15 +103,16 @@ p,span,a {
 }
 #product-shop .product-hot .products .product-item .product-deal{
     display: flex;
-    margin: 20px 50px;
+    margin: 20px 30px;
 }
-#product-shop .product-hot .products .product-item .product-deal .product-buy{
-    padding: 10px 15px;
+#product-shop .product-hot .products .product-item .product-deal .product-buy a{
+    padding: 6px 6px;
     background: #ee4d2d;
     color: #fff;
-    font-weight: 700;
+    font-weight: 500;
     border-radius: 8px;
     cursor: pointer;
+    text-decoration: none;
 }
 #product-shop .product-hot .products .product-item .product-deal .product-price {
     font-size: 18px;
@@ -225,15 +226,16 @@ p,span,a {
 }
 #product-shop .product-selling .products .product-item .product-deal{
     display: flex;
-    margin: 20px 50px;
+    margin: 20px 30px;
 }
-#product-shop .product-selling .products .product-item .product-deal .product-buy{
-    padding: 10px 15px;
+#product-shop .product-selling .products .product-item .product-deal .product-buy a{
+    padding: 6px 6px;
     background: #ee4d2d;
     color: #fff;
-    font-weight: 700;
+    font-weight: 500;
     border-radius: 8px;
     cursor: pointer;
+    text-decoration: none;
 }
 #product-shop .product-selling .products .product-item .product-deal .product-price {
     font-size: 18px;
@@ -361,15 +363,16 @@ p,span,a {
 }
 #product-shop .product-sale .products .product-item .product-deal{
     display: flex;
-    margin: 20px 50px;
+    margin: 20px 30px;
 }
-#product-shop .product-sale .products .product-item .product-deal .product-buy{
-    padding: 18px 15px;
+#product-shop .product-sale .products .product-item .product-deal .product-buy a{
+    padding: 6px 6px;
     background: #ee4d2d;
     color: #fff;
-    font-weight: 700;
+    font-weight: 500;
     border-radius: 8px;
     cursor: pointer;
+    text-decoration: none;
 }
 #product-shop .product-sale .products .product-item .product-deal .product-price-sale{
     padding-left: 10px;
@@ -494,13 +497,14 @@ p,span,a {
     display: flex;
     margin: 20px 20px;
 }
-.shop-overview .products .product-item .product-deal .product-buy{
-    padding: 10px 15px;
+.shop-overview .products .product-item .product-deal .product-buy a{
+    padding: 6px 6px;
     background: #ee4d2d;
     color: #fff;
-    font-weight: 700;
+    font-weight: 500;
     border-radius: 8px;
     cursor: pointer;
+    text-decoration: none;
 }
 .shop-overview .products .product-item .product-deal .product-price {
     font-size: 18px;
@@ -646,21 +650,24 @@ p,span,a {
     color: #fff;
     font-size: 16px;
     font-weight: 500;
+    text-decoration: none;
 }
-.product_karofi-detail .product-choose .product-buy,
-.product_hyundai-detail .product-choose .product-buy,
-.product_kangaroo-detail .product-choose .product-buy,
-.product_sunhouse-detail .product-choose .product-buy{
+.product_karofi-detail .product-choose .product-buy a,
+.product_hyundai-detail .product-choose .product-buy a,
+.product_kangaroo-detail .product-choose .product-buy a,
+.product_sunhouse-detail .product-choose .product-buy a{
     display: flex;
     margin-top: 30px;
-    width: 100px;
     background: #ee4d2d;
     height: 40px;
     align-items: center;
-    padding-left: 15px;
     color: #fff;
     cursor: pointer;
-    margin-left: 20px
+    margin-left: 20px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
 }
 .product_karofi-detail .product-related .product-title,
 .product_hyundai-detail .product-related .product-title,
@@ -736,16 +743,17 @@ p,span,a {
     display: flex;
     margin: 20px 20px;
 }
-.product_karofi-detail .product-related .product .product-item .product-deal .product-buy,
-.product_hyundai-detail .product-related .product .product-item .product-deal .product-buy,
-.product_kangaroo-detail .product-related .product .product-item .product-deal .product-buy,
-.product_sunhouse-detail .product-related .product .product-item .product-deal .product-buy{
-    padding: 10px 15px;
+.product_karofi-detail .product-related .product .product-item .product-deal .product-buy a,
+.product_hyundai-detail .product-related .product .product-item .product-deal .product-buy a,
+.product_kangaroo-detail .product-related .product .product-item .product-deal .product-buy a,
+.product_sunhouse-detail .product-related .product .product-item .product-deal .product-buy a{
+    padding: 6px 6px;
     background: #ee4d2d;
     color: #fff;
-    font-weight: 700;
+    font-weight: 500;
     border-radius: 8px;
     cursor: pointer;
+    text-decoration: none;
 }
 .product_karofi-detail .product-related .product .product-item .product-deal .product-price,
 .product_hyundai-detail .product-related .product .product-item .product-deal .product-price,
@@ -779,4 +787,61 @@ p,span,a {
     cursor: pointer;
     font-size: 16px;
     text-align: center;
+}
+
+/*CSS BUY NOW*/
+.buy_now{
+    margin: 80px auto;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.buy_now .cart-info{
+    display: flex;
+    width: 400px;
+}
+th{
+    text-align: left;
+    padding: 7px;
+    color: #fff;
+    background: #ff523b;
+    font-width: normal;
+}
+td{
+    padding: 10px 5px;
+}
+td input{
+    width: 50px;
+    height: 30px;
+    padding: 5px;
+}
+td a{
+    color: #ff523b;
+    font-size: 14px;
+}
+.buy_now .cart-info img{
+    width: 150px;
+    height: 150px;
+}
+.buy_now .cart-info p{
+    margin: 10px 0 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+.buy_now .cart-info .price{
+    font-size: 16px;
+    font-weight: 600;
+    color: red;
+    margin-bottom: 10px;
+}
+.buy_now .product-buy{
+    text-align: center;
+    background: red;
+    width: 250px;
+    margin: 20px auto;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
 }
