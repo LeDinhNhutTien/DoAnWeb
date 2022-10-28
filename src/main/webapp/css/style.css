@@ -2364,10 +2364,12 @@ a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
 }
-
+.blue-cart{
+  background-color: #00aeef !important;
+}
 .btn-primary {
   color: #fff;
-  background-color: #3e859f;
+  background-color: #00aeef !important;
   border-color: #fff;
 }
 
