@@ -637,7 +637,11 @@ pre code {
   margin-right: -15px;
   margin-left: -15px;
 }
-
+.row-slider {
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
 .no-gutters {
   margin-right: 0;
   margin-left: 0;
@@ -1268,7 +1272,7 @@ pre code {
   }
   .col-lg-9 {
     flex: 0 0 75%;
-    max-width: 75%;
+    max-width: 100%;
   }
   .col-lg-10 {
     flex: 0 0 83.33333%;
@@ -5850,7 +5854,7 @@ a.close.disabled {
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 525px;
+  height: 555px;
 }
 
 .carousel-inner::after {
@@ -7466,7 +7470,7 @@ button.bg-dark:focus {
   margin-right: 3rem !important;
 }
 .mt-153{
-  margin-top: 130px !important;
+  margin-top: 113px !important;
 }
 .mb-5,
 .my-5 {
@@ -7501,7 +7505,7 @@ button.bg-dark:focus {
 
 .pl-0,
 .px-0 {
-  padding-left: 0 !important;
+  padding-left: 5px !important;
 }
 
 .p-1 {
@@ -7558,7 +7562,7 @@ button.bg-dark:focus {
 
 .pt-3,
 .py-3 {
-  padding-top: 7px !important;
+  padding-top: 5px !important;
 }
 
 .pr-3,
@@ -7568,7 +7572,7 @@ button.bg-dark:focus {
 
 .pb-3,
 .py-3 {
-  padding-bottom: 7px !important;
+  padding-bottom: 2px !important;
 }
 
 .pl-3,
