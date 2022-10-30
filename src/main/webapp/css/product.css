@@ -140,7 +140,7 @@ p,span,a {
     font-size: 16px;
 
 }
-#product-shop .product-hot .see-more button{
+#product-shop .product-hot .see-more a{
     border: 0;
     border-radius: 30px;
     padding: 15px 65px;
@@ -257,7 +257,7 @@ p,span,a {
     font-size: 16px;
 }
 
-#product-shop .product-selling .see-more button{
+#product-shop .product-selling .see-more  a{
     border: 0;
     border-radius: 30px;
     padding: 15px 65px;
@@ -414,7 +414,7 @@ p,span,a {
     cursor: pointer;
     font-size: 16px;
 }
-#product-shop .product-sale .see-more button{
+#product-shop .product-sale .see-more a{
     border: 0;
     border-radius: 30px;
     padding: 15px 65px;
