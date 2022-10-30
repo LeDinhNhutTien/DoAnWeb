@@ -4,8 +4,8 @@
     height: 510px;
     background-color: #fff;
     bottom: -25px;
-    position: absolute;
-    margin-left: 400px;
+    justify-content: space-between;
+    margin: auto;
 }
 .container1 .input100{
     border: 1px solid #ccc;
