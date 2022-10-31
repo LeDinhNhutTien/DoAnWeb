@@ -322,7 +322,6 @@
                     </div>
                 </div>
 <%--                Product list--%>
-                <c:forEach items="${productList}" var="o">
                     <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
                         <div class="card product-item border-0 mb-4">
                             <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
@@ -340,7 +339,6 @@
                             </div>
                         </div>
                     </div>
-                </c:forEach>
                 <div class="col-12 pb-1">
                     <nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center mb-3">
