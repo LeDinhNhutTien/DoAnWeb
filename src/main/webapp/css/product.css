@@ -845,3 +845,33 @@ td a{
     font-size: 16px;
     font-weight: 500;
 }
+
+/*CSS COMMENTS*/
+.comment-box .comment input{
+    width: 70%;
+    height: 50px;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #86b0b6;
+}
+.comment-box .comment textarea{
+    width: 70%;
+    height: 150px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #86b0b6;
+    margin-right: 20%;
+}
+.comment-box .comment button{
+    border: 0;
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #fff;
+    background: #86b0b6;
+}
+.comment-box .comment button:hover{
+    background-color: #718a8e;
+}
