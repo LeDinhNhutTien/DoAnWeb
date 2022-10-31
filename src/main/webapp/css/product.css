@@ -20,6 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 p,span,a {
     margin-top: 0;
 }
+
 #product-shop .product-hot .headline{
     text-align: center;
     margin: 40px 0;
@@ -874,4 +875,28 @@ td a{
 }
 .comment-box .comment button:hover{
     background-color: #718a8e;
+}
+.post-comment .input-comment textarea{
+    width: 675px;
+    height: 70px;
+    padding: 15px 20px;
+    border: 1px solid #86b0b6;
+    margin-right: 20%;
+}
+.post-comment .input-comment .post{
+    width: 675px;
+    height: 40px;
+    background-color: #F5F6F7;
+    position: relative;
+    margin-top: -5px;
+}
+.post-comment .input-comment .post button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    margin: 10px auto;
+    background-color: #86b0b6;
+    color: #fff;
+    font-weight: 600;
 }
