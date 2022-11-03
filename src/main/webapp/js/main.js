@@ -86,3 +86,15 @@
 
 })(jQuery);
 
+// Tài khoản
+    function menuToggle(){
+    var toggleMenu = document.querySelector('.user-toggle');
+    toggleMenu.classList.toggle('active')
+}
+
+    // Bình luận
+    function commentToggel(){
+        var toggleComment = document.querySelector('.input-comment');
+        toggleComment.classList.toggle('active')
+    }
+

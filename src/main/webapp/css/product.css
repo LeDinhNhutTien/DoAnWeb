@@ -889,6 +889,10 @@ td a{
     background-color: #F5F6F7;
     position: relative;
     margin-top: -5px;
+    visibility: hidden;
+}
+.post-comment .input-comment.active .post {
+    visibility: visible;
 }
 .post-comment .input-comment .post button{
     position: absolute;
@@ -899,4 +903,98 @@ td a{
     background-color: #86b0b6;
     color: #fff;
     font-weight: 600;
+}
+/*CSS ACCOUNT*/
+
+.user-toggle .action .menu{
+    padding: 10px 20px;
+    background: #fff;
+    width: 250px;
+    border-radius: 15px;
+    border: 1px solid #6c757d;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    visibility: hidden;
+}
+.user-toggle .action {
+    position: fixed;
+    top: 58px;
+    right: 58px;
+    z-index: 99;
+}
+.user-toggle.active .action .menu{
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+}
+.action .profile{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+.action .profile img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.user .action .menu{
+    position: absolute;
+    top: 33px;
+    right: 27px;
+    padding: 10px 20px;
+    background: #fff;
+    width: 320px;
+    border-radius: 15px;
+    border: 1px solid #6c757d;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    visibility: hidden;
+}
+.user.active .action .menu{
+    visibility: visible;
+    opacity: 1;
+    transition: 1s;
+    z-index: 1;
+}
+.action .menu::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 28px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    transform: rotate(45deg);
+}
+.action .menu h3{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 0;
+    font-weight: 600;
+    color: #555;
+}
+.action .menu ul li{
+    list-style: none;
+    padding: 10px 0;
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+}
+.action .menu ul li i {
+    max-width: 30px;
+    margin-right: 10px;
+    opacity: 0.5;
+}
+.action .menu ul li:hover i{
+    opacity: 1;
+}
+.action .menu ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+}
+.action .menu ul li:hover a{
+    color: #ff5d94;
 }
