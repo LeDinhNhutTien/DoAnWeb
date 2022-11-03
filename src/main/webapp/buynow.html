@@ -53,10 +53,26 @@
                     <i class="fas blue fa-shopping-cart text-primary"></i>
                     <span class="badge">Giỏ hàng</span>
                 </a>
-                <a href="" class="btn user" style="margin-right: -15px">
+                <div class="btn user-toggle" onclick="menuToggle()" style="margin-right: -15px">
                     <i class="fas blue fa-solid fa-user text-primary"></i>
-                    <span class="badge">Tài khoản</span>
-                </a>
+                    <span class="badge" >Tài khoản</span>
+                    <div class="action">
+                        <div class="menu">
+                            <div class="profile" style="margin: auto">
+                                <img src="img/product/avt.jpg">
+                            </div>
+                            <h3>Tài Tiến Thiện</h3>
+                            <ul style="padding: 0">
+                                <li><i class="fas fa-user"></i><a href="#">Hồ sơ của tôi</a></li>
+                                <li><i class="fas fa-edit"></i><a href="#">Chỉnh sửa hồ sơ</a></li>
+                                <li><i class="fas fa-envelope"></i><a href="#">Liên hệ</a></li>
+                                <li><i class="fas fa-cog"></i><a href="#">Cài đặt</a></li>
+                                <li><i class="fas fa-hands-helping"></i><a href="#">Hỗ trợ</a></li>
+                                <li><i class="fas fa-sign-out-alt"></i><a href="#">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -70,7 +86,6 @@
                         <div class="nav-item dropdown">
                             <a href="shop.html" class="nav-link dropdown-toggle" data-toggle="dropdown">Sản phẩm</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="shop.html" class="dropdown-item">Sản phẩm</a>
                                 <a href="product-karofi.html" class="dropdown-item">Hãng Karofi</a>
                                 <a href="product-huyndai.html" class="dropdown-item">Hãng Hyundai</a>
                                 <a href="product-kangaroo.html" class="dropdown-item">Hãng Kangaroo</a>
