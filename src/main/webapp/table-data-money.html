@@ -18,6 +18,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <link rel="stylesheet" href="css/admin_main.css">
 
 </head>
 
@@ -41,10 +42,10 @@
   <aside class="app-sidebar">
     <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="/images/hay.jpg" width="50px"
         alt="User Image">
-      <div>
-        <p class="app-sidebar__user-name"><b>Quản Lý</b></p>
-        <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
-      </div>
+        <div>
+            <p class="app-sidebar__user-name"><b>Quản Lý</b></p>
+            <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
+        </div>
     </div>
     <hr>
     <ul class="app-menu">
@@ -61,10 +62,10 @@
       </li>
       <li><a class="app-menu__item " href="table-data-oder.html"><i class='app-menu__icon bx bx-task'></i><span
             class="app-menu__label">Quản lý đơn hàng</span></a></li>
-      <li><a class="app-menu__item active" href="table-data-banned.html"><i class='app-menu__icon bx bx-run'></i><span
+      <li><a class="app-menu__item" href="table-data-banned.html"><i class='app-menu__icon bx bx-run'></i><span
             class="app-menu__label">Quản lý nội bộ
           </span></a></li>
-      <li><a class="app-menu__item" href="table-data-money.html"><i class='app-menu__icon bx bx-dollar'></i><span
+      <li><a class="app-menu__item active" href="table-data-money.html"><i class='app-menu__icon bx bx-dollar'></i><span
             class="app-menu__label">Bảng kê lương</span></a></li>
       <li><a class="app-menu__item" href="quan-ly-bao-cao.html"><i
             class='app-menu__icon bx bx-pie-chart-alt-2'></i><span class="app-menu__label">Báo cáo doanh thu</span></a>
@@ -78,7 +79,7 @@
     <main class="app-content">
       <div class="app-title">
         <ul class="app-breadcrumb breadcrumb side">
-          <li class="breadcrumb-item active"><a href="#"><b>Quản lý nội bộ</b></a></li>
+          <li class="breadcrumb-item active"><a href="#"><b>Bảng kê lương</b></a></li>
         </ul>
         <div id="clock"></div>
       </div>
@@ -89,7 +90,7 @@
               <div class="row element-button">
                 <div class="col-sm-2">
   
-                  <a class="btn btn-add btn-sm" href="form-add-bi-cam.html" title="Thêm"><i class="fas fa-plus"></i>
+                  <a class="btn btn-add btn-sm" href="form-add-tien-luong.html" title="Thêm"><i class="fas fa-plus"></i>
                     Tạo mới</a>
                 </div>
                 <div class="col-sm-2">
@@ -118,64 +119,76 @@
                       class="fas fa-trash-alt"></i> Xóa tất cả </a>
                 </div>
               </div>
-              <table class="table table-hover table-bordered" id="sampleTable">
-                <thead>
-                  <tr>
-                    <th width="10"><input type="checkbox" id="all"></th>
-                    <th>Họ và Tên</th>
-                    <th>Ngày sinh</th>
-                    <th>Chức vụ</th>
-                    <th>Lý do cấm</th>
-                    <th>Tình trạng</th>
-                    <th>Chức năng</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td width="10"><input type="checkbox" name="check1" value="1"></td>
-                    <td>Phạm Nguyễn Đức Thiện</td>
-                    <td>7/12/2001</td>
-                    <td>Developer</td>
-                    <td>Sống Ngay Thẳng Công Chính </td>
-                    <td><span class="badge bg-success">Tăng Lương</span></td>
-                    <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i></button>
-                      <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></td>
-                  </tr>
-                  <tr>
-                    <td width="10"><input type="checkbox" name="check1" value="1"></td>
-                    <td>Huỳnh Anh Tài</td>
-                    <td>02/12/2002</td>
-                    <td>Developer</td>
-                    <td>Chơi Game Quá Sức Dẫn Đến Xa Sút Trí Tuệ</td>
-                    <td><span class="badge bg-danger">Trừ Lương</span></td>
-                    <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i></button>
-                      <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></td>
-                  </tr>
-                  <tr>
-                    <td width="10"><input type="checkbox" name="check1" value="1"></td>
-                    <td>Lê Đình Nhật Tiến</td>
-                    <td>07/02/2002</td>
-                    <td>Developer</td>
-                    <td>Đua Xe, Lạng Lách, Đánh Võng</td>
-                    <td><span class="badge bg-warning">Khóa tài khoản</span></td>
-                    <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i></button>
-                      <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></td>
-                  </tr>
+                        <table class="table table-hover table-bordered" id="sampleTable">
+                            <thead>
+                                <tr>
+                                    <th width="10"><input type="checkbox" id="all"></th>
+                                    <th>Tên nhân viên</th>
+                                    <th>Giới Tính</th>
+                                    <th>Chức vụ</th>
+                                    <th>Tiền lương</th>
+                                    <th>Trừ lương</th>
+                                    <th>Tiền thưởng</th>
+                                    <th>Tổng nhận</th>
+                                    <th>Trạng thái</th>
+                                    <th>Chức năng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                    <td>Phạm Nguyễn Đức Thiện</td>
+                                    <td>Nam</td>
+                                    <td>Developer</td>
+                                    <td>7.500.000 đ</td>
+                                    <td>Không</td>
+                                    <td>Có</td>
+                                    <td>7.500.000 đ</td>
+                                    <td><span class="badge bg-success">Đã nhận tiền</span></td>
+                                    <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i></button>
+                                        <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></td>
+                                </tr>
+                             <tr>
+                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td>Huỳnh Anh Tài</td>
+                                <td>Nam</td>
+                                <td>Developer</td>
+                                <td>7.500.000 đ</td>
+                                <td>Không</td>
+                                <td>1.000.000 đ</td>
+                                <td>8.500.000 đ</td>
+                                <td><span class="badge bg-success">Đã nhận tiền</span></td>
+                                <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i></button>
+                                    <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></td>
+                             </tr>
+                             <tr>
+                                <td width="10"><input type="checkbox" name="check1" value="1"></td>
+                                <td>Lê Đình Nhật Tiến</td>
+                                <td>Nam</td>
+                                <td>Developer</td>
+                                <td>7.000.000 đ</td>
+                                <td>Không</td>
+                                <td>Không</td>
+                                <td>7.000.000 đ</td>
+                                <td><span class="badge bg-success">Đã nhận tiền</span></td>
+                                <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i></button>
+                                    <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></td>
+                             </tr>
 
-                </tbody>
-              </table>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </main>
-   <!-- Essential javascripts for application to work-->
+    <!-- Essential javascripts for application to work-->
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="src/jquery.table2excel.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/admin_main.js"></script>
   <!-- The javascript plugin to display page loading on top-->
   <script src="js/plugins/pace.min.js"></script>
   <!-- Page specific javascripts-->
@@ -297,5 +310,6 @@
       $("#ModalUP").modal({ backdrop: false, keyboard: false })
     });
   </script>
-  </body>
-</html>
+</body>
+
+</html> 
