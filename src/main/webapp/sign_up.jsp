@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +9,7 @@
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/register-account.css">
+    <link rel="stylesheet" href="css/sign_up.css">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -22,8 +24,9 @@
     </div>
 </div>
 
-<form action="index.jsp" class="mt-3" method="post">
+<form action="signUp" class="mt-3" method="post">
     <h1>Đăng ký tài khoản</h1>
+    <p class="text-danger">${mess}</p>
     <fieldset>
         <label for="name">Tên:</label>
         <input type="text" id="name" name="user_name">
