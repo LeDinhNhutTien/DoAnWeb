@@ -1,5 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -133,7 +132,7 @@
                             <div class="carousel-caption d-flex flex-column align-items-center" style="justify-content: space-between;">
                                 <div class="p-3" style="max-width: 700px; margin-top: 180px">
                                     <h4 class="text-light text-uppercase font-weight-medium mb-3">GIẢM GIÁ 10% CHO ĐƠN HÀNG ĐẦU TIÊN CỦA BẠN</h4>
-                                    <a href="shop.html" class="btn btn-light py-2 px-3">MUA NGAY</a>
+                                    <a href="shop.html" class="btn btn-light py-2 px-3" style="border-radius: 10px">MUA NGAY</a>
                                 </div>
                             </div>
                         </div>
@@ -1124,6 +1123,7 @@
 
 
     <!-- Footer Start -->
+
     <div style="padding-left: 0;padding-right: 0%;" class="container-fluid bg-secondary text-dark mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
@@ -1136,14 +1136,14 @@
                 <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+081 *** ****</p>
             </div>
             <div class="col-lg-8 col-md-12">
-                <div class="row">
+                <div class="row" id="remove_line">
                     <div class="col-md-4 mb-5">
                         <h5 class="font-weight-bold text-dark mb-4">Khám phá AQUAWATER</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="index.jsp"></i>Máy lọc nước Karofi</a>
-                            <a class="text-dark mb-2" href="shop.html">Máy lọc nước Kangaroo </a>
-                            <a class="text-dark mb-2" href="detail.html">Máy lọc nước Hyundai </a>
-                            <a class="text-dark mb-2" href="cart.html">Máy lọc nước Sunhouse </a>
+                            <a class="text-dark mb-2" href="product-karofi.html"></i>Máy lọc nước Karofi</a>
+                            <a class="text-dark mb-2" href="product-kangaroo.html">Máy lọc nước Kangaroo </a>
+                            <a class="text-dark mb-2" href="product-huyndai.html">Máy lọc nước Hyundai </a>
+                            <a class="text-dark mb-2" href="product-sunhouse.html">Máy lọc nước Sunhouse </a>
                             <a class="text-dark mb-2" href="checkout.html">Máy Lọc Nước Kangen </a>
                             <a class="text-dark" href="contact.html">Máy lọc nước Fujie </a>
 
@@ -1160,10 +1160,10 @@
                         <h5 class="font-weight-bold text-dark mb-4">Dịch vụ khách hành </h5>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-dark mb-2" href="#"> Chính sách đổi trả</a>
-                            <a class="text-dark mb-2" href="#">Liên hệ</a>
-                            <a class="text-dark mb-2" href="#">Khách hàng hài lòng</a>
+                            <a class="text-dark mb-2" href="contact.html">Liên hệ</a>
+                            <a class="text-dark mb-2" href="detail.html">Khách hàng hài lòng</a>
                             <a class="text-dark mb-2" href="#">Chính sách giao hàng </a>
-                            <a class="text-dark mb-2" href="#"></i>Hỏi đáp - FAQs</a>
+                            <a class="text-dark mb-2" href="contact.html"></i>Hỏi đáp - FAQs</a>
                             <a class="text-dark" href="#"></i>Chính sách  khuyến mãi</a>
                         </div>
                         <h5 style="margin-top: 1.5rem;" class="font-weight-bold text-dark mb-4">Về AQUAWATER</h5>
