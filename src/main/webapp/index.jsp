@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,10 +64,18 @@
                         <span class="badge">Giỏ hàng</span>
                     </a>
                     <div class="btn user-toggle" onclick="menuToggle()" style="margin-right: -15px">
+                     <c:if test="${sessionScope.acc == null}">
                         <a href="taikhoan.html" class="btn user" style="margin-right: -15px">
                             <i class="fas blue fa-solid fa-user text-primary"></i>
                             <span class="badge">Tài khoản</span>
                         </a>
+                        </c:if>
+                        <c:if test="${sessionScope.acc != null}">
+                            <a href="taikhoan.html" class="btn user" style="margin-right: -15px">
+                                <i class="fas blue fa-solid fa-user text-primary"></i>
+                                <span class="badge">Xin chào ${sessionScope.acc.user}</span>
+                            </a>
+                        </c:if>
 <!--                        <i class="fas blue fa-solid fa-user text-primary"></i>-->
 <!--                        <span class="badge" >Tài khoản</span>-->
 <!--                        <div class="action-1">-->
@@ -110,12 +119,19 @@
                 </nav>
 
                 <div class="col-lg-3 col-6 ml-5 text-right " style="display: flex;padding: 0 15px;justify-content: flex-end ;gap: 50px">
-                    <a href="login.jsp" class="btn border border-back float-left">
-                        Đăng nhập
-                    </a>
                     <a href="sign_up.jsp" class="btn border border-back">
                         Đăng ký
                     </a>
+                    <c:if test="${sessionScope.acc != null}">
+                        <a href="logout" class="btn border border-back float-left">
+                            Đăng xuất
+                        </a>
+                    </c:if>
+                    <c:if test="${sessionScope.acc == null}">
+                        <a href="login.jsp" class="btn border border-back">
+                            Đăng nhập
+                        </a>
+                    </c:if>
                 </div>
             </div>
         </div>

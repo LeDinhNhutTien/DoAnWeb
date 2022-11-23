@@ -47,8 +47,9 @@
     <div class="container-login100">
 
         <div class=" wrap-login100 p-l-110 p-r-110 p-t-10 p-b-33" >
+
             <form class=" form-login login100-form validate-form flex-sb flex-w" action="login" method="post">
-					<span class="login100-form-title p-b-33">
+                <span class="login100-form-title p-b-33">
 						Đăng Nhập Với
 					</span>
 
@@ -61,7 +62,7 @@
                     <img src="img/icon-google.png" alt="GOOGLE">
                     Google
                 </a>
-                <p class="text-danger" style="font-size: 20px;">${mess}</p>
+                <p class="text-danger" style="font-size: 20px;">${error}</p>
                 <div class="p-t-31 p-b-9">
 						<span class="txt1">
 							Tên tài khoản

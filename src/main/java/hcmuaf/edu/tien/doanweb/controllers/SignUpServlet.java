@@ -1,7 +1,7 @@
 package hcmuaf.edu.tien.doanweb.controllers;
 
 import hcmuaf.edu.tien.doanweb.dao.DAO;
-import hcmuaf.edu.tien.doanweb.entities.Account;
+import hcmuaf.edu.tien.doanweb.entities.User;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -26,7 +26,7 @@ public class SignUpServlet extends HttpServlet {
         }
         else{
             DAO dao = new DAO();
-            Account a = dao.checkAccountExits(user);
+            User a = dao.checkAccountExits(user);
             if(a == null){ // chưa có tài khoản
                 dao.sign_up(user,pass);
                 response.sendRedirect("login.jsp");

@@ -1,7 +1,7 @@
 package hcmuaf.edu.tien.doanweb.controllers;
 
 import hcmuaf.edu.tien.doanweb.dao.DAO;
-import hcmuaf.edu.tien.doanweb.entities.Account;
+import hcmuaf.edu.tien.doanweb.entities.User;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -17,17 +17,17 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html; charset= UTF-8");
         String username  = request.getParameter("username");
         String password  = request.getParameter("pass");
         DAO dao = new DAO();
-        Account a = dao.login(username,password);
-        if (a == null){
-            request.setAttribute("mess","Tên tài khoản hoặc mật khẩu sai");
+        User a = dao.login(username,password);
+        if (a == null){ // tài khoản ko tồn tại
+            request.setAttribute("error","Tên tài khoản hoặc mật khẩu sai"); // báo lỗi
             request.getRequestDispatcher("login.jsp").forward(request,response);
-
         }else{
-            request.getRequestDispatcher("index.jsp").forward(request,response);
+            HttpSession session = request.getSession(true);
+            session.setAttribute("acc",a);
+            response.sendRedirect("index.jsp");
         }
     }
 }

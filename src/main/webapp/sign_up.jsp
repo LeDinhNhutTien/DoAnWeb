@@ -35,7 +35,7 @@
         <input type="password" id="password" name="user_password">
 
         <label for="password">Nhập lại mật khẩu:</label>
-        <input type="password" id="password1" name="user_password">
+        <input type="password" id="password1" name="rePassword">
 
     </fieldset>
     <button type="submit">Đăng ký</button>

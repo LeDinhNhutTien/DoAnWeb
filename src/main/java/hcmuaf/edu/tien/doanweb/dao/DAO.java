@@ -1,6 +1,6 @@
 package hcmuaf.edu.tien.doanweb.dao;
 
-import hcmuaf.edu.tien.doanweb.entities.Account;
+import hcmuaf.edu.tien.doanweb.entities.User;
 import hcmuaf.edu.tien.doanweb.entities.ProductEntity;
 import hcmuaf.edu.tien.doanweb.util.ConnectionUtil;
 
@@ -41,7 +41,8 @@ public class DAO {
         }
         return products;
     }
-    public Account login(String user, String pass){
+    // Đăng nhập
+    public User login(String user, String pass){
         String query = "select * from account \n" + "where user = ?\n" + "and pass = ?";
         try {
             conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
@@ -50,17 +51,16 @@ public class DAO {
             ps.setString(2,pass);
             rs = ps.executeQuery();
             while (rs.next()){
-                return  new Account(rs.getInt(1),rs.getString(2),
-                        rs.getString(3),rs.getInt(4),rs.getInt(5));
+                return  new User(rs.getInt(1),rs.getString(2),
+             rs.getString(3),rs.getInt(4),rs.getInt(5),rs.getString(6));
             }
         }
         catch (Exception e){
-
         }
         return null;
     }
     // kiểm tra tài khoản đã tồn tại hay chưa
-    public Account checkAccountExits(String user){
+    public User checkAccountExits(String user){
         String query = "select * from account \n" + "where user = ?\n" + "and pass = ?";
         try {
             conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
@@ -68,18 +68,17 @@ public class DAO {
             ps.setString(1,user);
             rs = ps.executeQuery();
             while (rs.next()){
-                return  new Account(rs.getInt(1),rs.getString(2),
-                        rs.getString(3),rs.getInt(4),rs.getInt(5));
+                return  new User(rs.getInt(1),rs.getString(2),
+                        rs.getString(3),rs.getInt(4),rs.getInt(5), rs.getString(6));
             }
         }
         catch (Exception e){
-
         }
         return null;
     }
     // đăng ký tk
     public  void sign_up(String user, String pass){
-        String query = "insert into account" + "values(0,?,?,0,0)";
+        String query = "insert into account(`user`,pass,is_Sell,isAdmin)"+ " values(?,?,0,0)";
         try {
             conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
             ps = conn.prepareStatement(query);
@@ -87,7 +86,6 @@ public class DAO {
             ps.setString(2,pass);
             ps.executeUpdate();
         }catch (Exception e){
-
         }
     }
     public static void main(String[] args) {
