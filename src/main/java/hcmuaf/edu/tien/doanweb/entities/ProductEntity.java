@@ -2,63 +2,46 @@ package hcmuaf.edu.tien.doanweb.entities;
 
 public class ProductEntity {
 
-    private long id;
-    private String title;
-    private long price;
-    private String size;
-    private String color;
-    private String description;
+    private int id;
+    private String name;
+    private double price;
     private String image;
-
+    private String description;
+    private int cateID;
+    private int sell_ID;
     public ProductEntity() {
     }
 
-    public long getId() {
+    public ProductEntity(int id, String name, double price, String image, String description) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.image = image;
+        this.description = description;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public long getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(double price) {
         this.price = price;
-    }
-
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getImage() {
@@ -69,16 +52,40 @@ public class ProductEntity {
         this.image = image;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getCateID() {
+        return cateID;
+    }
+
+    public void setCateID(int cateID) {
+        this.cateID = cateID;
+    }
+
+    public int getSell_ID() {
+        return sell_ID;
+    }
+
+    public void setSell_ID(int sell_ID) {
+        this.sell_ID = sell_ID;
+    }
+
     @Override
     public String toString() {
         return "ProductEntity{" +
                 "id=" + id +
-                ", title='" + title + '\'' +
+                ", name='" + name + '\'' +
                 ", price=" + price +
-                ", size='" + size + '\'' +
-                ", color='" + color + '\'' +
-                ", description='" + description + '\'' +
                 ", image='" + image + '\'' +
+                ", description='" + description + '\'' +
+                ", cateID=" + cateID +
+                ", sell_ID=" + sell_ID +
                 '}';
     }
 }

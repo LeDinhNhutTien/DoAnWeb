@@ -106,10 +106,10 @@
                             <div class="nav-item dropdown">
                                 <a href="shop.html" class="nav-link dropdown-toggle" data-toggle="dropdown">Sản phẩm</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="product-karofi.html" class="dropdown-item">Hãng Karofi</a>
-                                    <a href="product-huyndai.html" class="dropdown-item">Hãng Hyundai</a>
-                                    <a href="product-kangaroo.html" class="dropdown-item">Hãng Kangaroo</a>
-                                    <a href="product-sunhouse.html" class="dropdown-item">Hãng Sunhouse</a>
+                                    <a href="shop" class="dropdown-item">Hãng Karofi</a>
+                                    <a href="shop" class="dropdown-item">Hãng Hyundai</a>
+                                    <a href="shop" class="dropdown-item">Hãng Kangaroo</a>
+                                    <a href="shop" class="dropdown-item">Hãng Sunhouse</a>
                                 </div>
                             </div>
                             <a href="detail.html" class="nav-item nav-link">Giới thiệu</a>
@@ -1157,7 +1157,7 @@
                     <div class="col-md-4 mb-5">
                         <h5 class="font-weight-bold text-dark mb-4">Khám phá AQUAWATER</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="product-karofi.html"></i>Máy lọc nước Karofi</a>
+                            <a class="text-dark mb-2" href="product-karofi.jsp"></i>Máy lọc nước Karofi</a>
                             <a class="text-dark mb-2" href="product-kangaroo.html">Máy lọc nước Kangaroo </a>
                             <a class="text-dark mb-2" href="product-huyndai.html">Máy lọc nước Hyundai </a>
                             <a class="text-dark mb-2" href="product-sunhouse.html">Máy lọc nước Sunhouse </a>
