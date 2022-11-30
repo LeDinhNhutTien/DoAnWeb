@@ -13,7 +13,7 @@ public class Mod extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User acc = (User) session.getAttribute("acc");
-        if(acc == null){
+        if(acc == null ){
             request.setAttribute("error","Bạn không có quyền truy cập");
             response.sendRedirect("../login.jsp");
         }

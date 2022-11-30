@@ -10,13 +10,13 @@
                 </a>
             </div>
             <div class="col-lg-6 col-6 text-left">
-                <form action="">
+                <form action="search"  method="post">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Bạn tìm gì...">
+                        <input name="txt" type="text" class="form-control" placeholder="Bạn tìm gì...">
                         <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
+                            <button type="submit" class="input-group-text bg-transparent text-primary">
                                 <i class="fa fa-search"></i>
-                            </span>
+                            </button>
                         </div>
                     </div>
                 </form>

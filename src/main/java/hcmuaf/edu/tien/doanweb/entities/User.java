@@ -5,20 +5,19 @@ import java.io.Serializable;
 public class User implements Serializable {
     private  static final  long serialVersionUID = 1l;
     private  int id;
-    private  String user;
+    private  String username;
     private  String pass;
-    private int isSell;
-    private  int isAdmin;
     private  String fullname;
+    private int role;
     public User() {
     }
-    public User(int id, String user, String pass, int isSell, int isAdmin,String fullname) {
+
+    public User(int id, String username, String pass, String fullname, int role) {
         this.id = id;
-        this.user = user;
+        this.username = username;
         this.pass = pass;
-        this.isSell = isSell;
-        this.isAdmin = isAdmin;
         this.fullname = fullname;
+        this.role = role;
     }
 
     public int getId() {
@@ -29,12 +28,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUser() {
-        return user;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPass() {
@@ -45,22 +44,6 @@ public class User implements Serializable {
         this.pass = pass;
     }
 
-    public int getIsSell() {
-        return isSell;
-    }
-
-    public void setIsSell(int isSell) {
-        this.isSell = isSell;
-    }
-
-    public int getIsAdmin() {
-        return isAdmin;
-    }
-
-    public void setIsAdmin(int isAdmin) {
-        this.isAdmin = isAdmin;
-    }
-
     public String getFullname() {
         return fullname;
     }
@@ -68,14 +51,23 @@ public class User implements Serializable {
     public void setFullname(String fullname) {
         this.fullname = fullname;
     }
+
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
-        return "Account{" +
+        return "User{" +
                 "id=" + id +
-                ", user='" + user + '\'' +
+                ", username='" + username + '\'' +
                 ", pass='" + pass + '\'' +
-                ", isSell=" + isSell +
-                ", isAdmin=" + isAdmin +
+                ", fullname='" + fullname + '\'' +
+                ", role=" + role +
                 '}';
     }
 }

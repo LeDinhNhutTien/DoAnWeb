@@ -47,13 +47,13 @@
                     </a>
                 </div>
                 <div class="col-lg-6 col-6 text-left">
-                    <form action="">
+                    <form action="search"  method="post">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Bạn tìm gì...">
+                            <input name="txt" type="text" class="form-control" placeholder="Bạn tìm gì...">
                             <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
+                                <button type="submit" class="input-group-text bg-transparent text-primary">
+                                    <i class="fa fa-search"></i>
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -64,11 +64,11 @@
                         <span class="badge">Giỏ hàng</span>
                     </a>
                     <div class="btn user-toggle" onclick="menuToggle()" style="margin-right: -15px">
-                     <c:if test="${sessionScope.acc == null}">
-                        <a href="taikhoan.html" class="btn user" style="margin-right: -15px">
-                            <i class="fas blue fa-solid fa-user text-primary"></i>
-                            <span class="badge">Tài khoản</span>
-                        </a>
+                        <c:if test="${sessionScope.acc == null}">
+                            <a href="taikhoan.html" class="btn user" style="margin-right: -15px">
+                                <i class="fas blue fa-solid fa-user text-primary"></i>
+                                <span class="badge">Tài khoản</span>
+                            </a>
                         </c:if>
                         <c:if test="${sessionScope.acc != null}">
                             <a href="taikhoan.html" class="btn user" style="margin-right: -15px">
@@ -76,22 +76,22 @@
                                 <span class="badge">Xin chào ${sessionScope.acc.user}</span>
                             </a>
                         </c:if>
-<!--                        <i class="fas blue fa-solid fa-user text-primary"></i>-->
-<!--                        <span class="badge" >Tài khoản</span>-->
-<!--                        <div class="action-1">-->
-<!--                            <div class="menu-1">-->
-<!--                                    <img src="img/product/avt.jpg">-->
-<!--                                <h3>Tài Tiến Thiện</h3>-->
-<!--                                <ul style="padding: 0">-->
-<!--                                    <li><i class="fas fa-user"></i><a href="#">Hồ sơ của tôi</a></li>-->
-<!--                                    <li><i class="fas fa-edit"></i><a href="#">Chỉnh sửa hồ sơ</a></li>-->
-<!--                                    <li><i class="fas fa-envelope"></i><a href="#">Liên hệ</a></li>-->
-<!--                                    <li><i class="fas fa-cog"></i><a href="#">Cài đặt</a></li>-->
-<!--                                    <li><i class="fas fa-hands-helping"></i><a href="#">Hỗ trợ</a></li>-->
-<!--                                    <li><i class="fas fa-sign-out-alt"></i><a href="#">Đăng xuất</a></li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <!--                        <i class="fas blue fa-solid fa-user text-primary"></i>-->
+                        <!--                        <span class="badge" >Tài khoản</span>-->
+                        <!--                        <div class="action-1">-->
+                        <!--                            <div class="menu-1">-->
+                        <!--                                    <img src="img/product/avt.jpg">-->
+                        <!--                                <h3>Tài Tiến Thiện</h3>-->
+                        <!--                                <ul style="padding: 0">-->
+                        <!--                                    <li><i class="fas fa-user"></i><a href="#">Hồ sơ của tôi</a></li>-->
+                        <!--                                    <li><i class="fas fa-edit"></i><a href="#">Chỉnh sửa hồ sơ</a></li>-->
+                        <!--                                    <li><i class="fas fa-envelope"></i><a href="#">Liên hệ</a></li>-->
+                        <!--                                    <li><i class="fas fa-cog"></i><a href="#">Cài đặt</a></li>-->
+                        <!--                                    <li><i class="fas fa-hands-helping"></i><a href="#">Hỗ trợ</a></li>-->
+                        <!--                                    <li><i class="fas fa-sign-out-alt"></i><a href="#">Đăng xuất</a></li>-->
+                        <!--                                </ul>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
                     </div>
                 </div>
             </div>
@@ -104,13 +104,13 @@
                         <div class="navbar-nav mr-auto py-0 ">
                             <a href="index.jsp" class="nav-item nav-link active">Trang chủ</a>
                             <div class="nav-item dropdown">
-                                <a href="shop.html" class="nav-link dropdown-toggle" data-toggle="dropdown">Sản phẩm</a>
-                                <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="shop" class="dropdown-item">Hãng Karofi</a>
-                                    <a href="shop" class="dropdown-item">Hãng Hyundai</a>
-                                    <a href="shop" class="dropdown-item">Hãng Kangaroo</a>
-                                    <a href="shop" class="dropdown-item">Hãng Sunhouse</a>
-                                </div>
+                                <a href="shop" class="nav-link " >Sản phẩm</a>
+                                <%--  dropdown-toggle  data-toggle="dropdown"--%>
+<%--                                <div class="dropdown-menu rounded-0 m-0">--%>
+<%--                                    <c:forEach items="${listC}" var="o">--%>
+<%--                                        <a href="shop" class="dropdown-item">${o.cname}</a>--%>
+<%--                                    </c:forEach>--%>
+<%--                                </div>--%>
                             </div>
                             <a href="detail.html" class="nav-item nav-link">Giới thiệu</a>
                             <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
@@ -137,7 +137,6 @@
         </div>
     </div>
     <!-- Topbar End -->
-
     <!-- Navbar Start -->
     <div class="container-fluid mb-5 mt-153 " style="justify-content: space-between; ">
         <div class="row-slider border-top px-xl-5 ">
@@ -1157,7 +1156,7 @@
                     <div class="col-md-4 mb-5">
                         <h5 class="font-weight-bold text-dark mb-4">Khám phá AQUAWATER</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="product-karofi.jsp"></i>Máy lọc nước Karofi</a>
+                            <a class="text-dark mb-2" href="product.jsp"></i>Máy lọc nước Karofi</a>
                             <a class="text-dark mb-2" href="product-kangaroo.html">Máy lọc nước Kangaroo </a>
                             <a class="text-dark mb-2" href="product-huyndai.html">Máy lọc nước Hyundai </a>
                             <a class="text-dark mb-2" href="product-sunhouse.html">Máy lọc nước Sunhouse </a>

@@ -14,7 +14,7 @@ public class Admin extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User acc = (User) session.getAttribute("acc");
-        if(acc == null ||(acc.getIsAdmin() == 0)){
+        if(acc == null ||(acc.getRole() == 0)){
             request.setAttribute("error","Bạn không có quyền truy cập");
             response.sendRedirect("../login.jsp");
             return;

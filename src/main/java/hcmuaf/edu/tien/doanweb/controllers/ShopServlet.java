@@ -23,7 +23,7 @@ public class ShopServlet extends HttpServlet {
             // set du lieu den jsp
         request.setAttribute("listPro",listPro);
         request.setAttribute("listC",listCate);
-        request.getRequestDispatcher("product-karofi.jsp").forward(request,response);
+        request.getRequestDispatcher("product.jsp").forward(request,response);
     }
 
     @Override

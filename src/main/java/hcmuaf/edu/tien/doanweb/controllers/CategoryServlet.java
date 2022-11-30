@@ -23,7 +23,7 @@ public class CategoryServlet extends HttpServlet {
 
         request.setAttribute("listPro",list);
         request.setAttribute("listC",listCate);
-        request.getRequestDispatcher("product-karofi.jsp").forward(request,response);
+        request.getRequestDispatcher("product.jsp").forward(request,response);
     }
 
     @Override

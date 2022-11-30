@@ -55,6 +55,25 @@ public class DAO {
         }
         return products;
     }
+    // tim kiem sp
+    public List<ProductEntity> searchByName(String txtSearch) {
+        List<ProductEntity> products = new ArrayList<>();
+        String sql = "SELECT * FROM products WHERE name like ?";
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1,"%" + txtSearch + "%");
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                products.add(new ProductEntity(rs.getInt(1),
+                        rs.getString(2), rs.getDouble(3),
+                        rs.getString(4),rs.getString(5)));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return products;
+    }
     // load danh muc
     public List<Categary> getAllCategary() {
         List<Categary> products = new ArrayList<>();
@@ -83,7 +102,7 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()){
                 return  new User(rs.getInt(1),rs.getString(2),
-             rs.getString(3),rs.getInt(4),rs.getInt(5),rs.getString(6));
+             rs.getString(3),rs.getString(4),rs.getInt(5));
             }
         }
         catch (Exception e){
@@ -100,7 +119,7 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()){
                 return  new User(rs.getInt(1),rs.getString(2),
-                        rs.getString(3),rs.getInt(4),rs.getInt(5), rs.getString(6));
+                        rs.getString(3),rs.getString(4),rs.getInt(5));
             }
         }
         catch (Exception e){
@@ -109,7 +128,7 @@ public class DAO {
     }
     // đăng ký tk
     public  void sign_up(String user, String pass){
-        String query = "insert into account(`user`,pass,is_Sell,isAdmin)"+ " values(?,?,0,0)";
+        String query = "insert into account(`user`,pass,role)"+ " values(?,?,0)";
         try {
             conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
             ps = conn.prepareStatement(query);
