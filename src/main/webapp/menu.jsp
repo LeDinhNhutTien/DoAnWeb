@@ -12,7 +12,7 @@
             <div class="col-lg-6 col-6 text-left">
                 <form action="search"  method="post">
                     <div class="input-group">
-                        <input name="txt" type="text" class="form-control" placeholder="Bạn tìm gì...">
+                        <input value="${txtS}" name="txt" type="text" class="form-control" placeholder="Bạn tìm gì...">
                         <div class="input-group-append">
                             <button type="submit" class="input-group-text bg-transparent text-primary">
                                 <i class="fa fa-search"></i>
@@ -36,7 +36,7 @@
                     <c:if test="${sessionScope.acc != null}">
                         <a href="taikhoan.html" class="btn user" style="margin-right: -15px">
                             <i class="fas blue fa-solid fa-user text-primary"></i>
-                            <span class="badge">Xin chào ${sessionScope.acc.user}</span>
+                            <span class="badge">Xin chào ${sessionScope.acc.username}</span>
                         </a>
                     </c:if>
                     <!--                        <i class="fas blue fa-solid fa-user text-primary"></i>-->
@@ -74,7 +74,7 @@
                                 </c:forEach>
                             </div>
                         </div>
-                        <a href="detail.html" class="nav-item nav-link">Giới thiệu</a>
+                        <a href="introduce.html" class="nav-item nav-link">Giới thiệu</a>
                         <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
                     </div>
                 </div>

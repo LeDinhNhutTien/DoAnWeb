@@ -43,7 +43,7 @@
         <div class="d-inline-flex">
             <p class="m-0"><a href="index.jsp" style="font-size: 15px">Trang chủ</a></p>
             <p class="m-0 px-2">-</p>
-            <p class="m-0"><a href="shop.html" style="font-size: 15px">Sản phẩm</a></p>
+            <p class="m-0"><a href="shop" style="font-size: 15px">Sản phẩm</a></p>
         </div>
     </div>
 </div>
@@ -127,7 +127,7 @@
                                         <div class="product-price">${o.price} VNĐ</div>
                                     </div>
                                     <div class="product-detail">
-                                        <a href="product_karofi-detail.html" class="product-cat">Xem chi tiết</a>
+                                        <a href="detail?pid=${o.id}" class="product-cat">Xem chi tiết</a>
                                     </div>
                                 </div>
                             </li>
@@ -182,7 +182,7 @@
                     <div class="d-flex flex-column justify-content-start">
                         <a class="text-dark mb-2" href="index.jsp"></i>Máy lọc nước Karofi</a>
                         <a class="text-dark mb-2" href="shop.html">Máy lọc nước Kangaroo </a>
-                        <a class="text-dark mb-2" href="detail.html">Máy lọc nước Hyundai </a>
+                        <a class="text-dark mb-2" href="introduce.html">Máy lọc nước Hyundai </a>
                         <a class="text-dark mb-2" href="cart.html">Máy lọc nước Sunhouse </a>
                         <a class="text-dark mb-2" href="checkout.html">Máy Lọc Nước Kangen </a>
                         <a class="text-dark" href="contact.html">Máy lọc nước Fujie </a>
@@ -192,7 +192,7 @@
                     <div class="d-flex flex-column justify-content-start">
                         <a class="text-dark mb-2" href="index.jsp"></i>Lõi lọc nước</a>
                         <a class="text-dark mb-2" href="shop.html">Bút thử nước </a>
-                        <a class="text-dark mb-2" href="detail.html">Cốc lọc nước </a>
+                        <a class="text-dark mb-2" href="introduce.html">Cốc lọc nước </a>
 
                     </div>
                 </div>
@@ -210,7 +210,7 @@
                     <div class="d-flex flex-column justify-content-start">
                         <a class="text-dark mb-2" href="index.jsp"></i>Câu chuyền về AQUAWATER</a>
                         <a class="text-dark mb-2" href="shop.html">Nhà Máy </a>
-                        <a class="text-dark mb-2" href="detail.html">Blog </a>
+                        <a class="text-dark mb-2" href="introduce.html">Blog </a>
 
                     </div>
                 </div>

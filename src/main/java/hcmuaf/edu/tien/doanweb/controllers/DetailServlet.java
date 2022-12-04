@@ -8,29 +8,24 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "SearchServlet", value = "/search")
-public class SearchServlet extends HttpServlet {
+@WebServlet(name = "DetailServlet", value = "/detail")
+public class DetailServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("pid");
+        DAO dao = new DAO();
+        ProductEntity p = dao.getProductByID(id);
+        List<Categary> listCate = dao.getAllCategary();
 
+        request.setAttribute("detail",p);
+        request.setAttribute("listC",listCate);
+        request.getRequestDispatcher("detail.jsp").forward(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        String txtSearch = request.getParameter("txt");
-        DAO dao = new DAO();
-        List<ProductEntity> list = dao.searchByName(txtSearch);
-        List<Categary> listCate = dao.getAllCategary();
-
-        //
-        request.setAttribute("listPro",list);
-        request.setAttribute("listC",listCate);
-        request.setAttribute("txtS",txtSearch);
-        request.getRequestDispatcher("product.jsp").forward(request,response);
 
     }
 }

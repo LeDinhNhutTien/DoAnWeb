@@ -49,7 +49,7 @@
                 <div class="col-lg-6 col-6 text-left">
                     <form action="search"  method="post">
                         <div class="input-group">
-                            <input name="txt" type="text" class="form-control" placeholder="Bạn tìm gì...">
+                            <input value="${txtS}" name="txt" type="text" class="form-control" placeholder="Bạn tìm gì...">
                             <div class="input-group-append">
                                 <button type="submit" class="input-group-text bg-transparent text-primary">
                                     <i class="fa fa-search"></i>
@@ -73,7 +73,7 @@
                         <c:if test="${sessionScope.acc != null}">
                             <a href="taikhoan.html" class="btn user" style="margin-right: -15px">
                                 <i class="fas blue fa-solid fa-user text-primary"></i>
-                                <span class="badge">Xin chào ${sessionScope.acc.user}</span>
+                                <span class="badge">Xin chào ${sessionScope.acc.username}</span>
                             </a>
                         </c:if>
                         <!--                        <i class="fas blue fa-solid fa-user text-primary"></i>-->
@@ -112,7 +112,7 @@
 <%--                                    </c:forEach>--%>
 <%--                                </div>--%>
                             </div>
-                            <a href="detail.html" class="nav-item nav-link">Giới thiệu</a>
+                            <a href="introduce.html" class="nav-item nav-link">Giới thiệu</a>
                             <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
                         </div>
                     </div>
@@ -300,7 +300,7 @@
                                 <div class="product-price">6,660,000 VNĐ</div>
                             </div>
                             <div class="product-detail">
-                                <a href="product_hyundai-detail.html" class="product-cat">Xem chi tiết</a>
+                                <a href="detail.jsp" class="product-cat">Xem chi tiết</a>
                             </div>
                         </div>
                     </li>
@@ -459,7 +459,7 @@
                                 <div class="product-price">6,660,000 VNĐ</div>
                             </div>
                             <div class="product-detail ">
-                                <a href="product_hyundai-detail.html" class="product-cat">Xem chi tiết</a>
+                                <a href="detail.jsp" class="product-cat">Xem chi tiết</a>
                             </div>
                         </div>
                     </li>
@@ -684,7 +684,7 @@
                                 <div class="product-price">6,660,000 VNĐ</div>
                             </div>
                             <div class="product-detail">
-                                <a href="product_hyundai-detail.html" class="product-cat">Xem chi tiết</a>
+                                <a href="detail.jsp" class="product-cat">Xem chi tiết</a>
                             </div>
                         </div>
                     </li>
@@ -726,7 +726,7 @@
                                 <div class="product-price">6,660,000 VNĐ</div>
                             </div>
                             <div class="product-detail">
-                                <a href="product_hyundai-detail.html" class="product-cat">Xem chi tiết</a>
+                                <a href="detail.jsp" class="product-cat">Xem chi tiết</a>
                             </div>
                         </div>
                     </li>
@@ -977,7 +977,7 @@
                             </div>
                             <div class="product-detail">
                                 <div class="product-detail">
-                                    <a href="product_hyundai-detail.html" class="product-cat">Xem chi tiết</a>
+                                    <a href="detail.jsp" class="product-cat">Xem chi tiết</a>
                                 </div>
                             </div>
                         </div>
@@ -1026,7 +1026,7 @@
                                 </div>
                             </div>
                             <div class="product-detail">
-                                <a href="product_hyundai-detail.html" class="product-cat">Xem chi tiết</a>
+                                <a href="detail.jsp" class="product-cat">Xem chi tiết</a>
                             </div>
                         </div>
                     </li>
@@ -1168,7 +1168,7 @@
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-dark mb-2" href="index.jsp"></i>Lõi lọc nước</a>
                             <a class="text-dark mb-2" href="shop.html">Bút thử nước </a>
-                            <a class="text-dark mb-2" href="detail.html">Cốc lọc nước </a>
+                            <a class="text-dark mb-2" href="introduce.html">Cốc lọc nước </a>
 
                         </div>
                     </div>
@@ -1177,7 +1177,7 @@
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-dark mb-2" href="#"> Chính sách đổi trả</a>
                             <a class="text-dark mb-2" href="contact.html">Liên hệ</a>
-                            <a class="text-dark mb-2" href="detail.html">Khách hàng hài lòng</a>
+                            <a class="text-dark mb-2" href="introduce.html">Khách hàng hài lòng</a>
                             <a class="text-dark mb-2" href="#">Chính sách giao hàng </a>
                             <a class="text-dark mb-2" href="contact.html"></i>Hỏi đáp - FAQs</a>
                             <a class="text-dark" href="#"></i>Chính sách  khuyến mãi</a>
@@ -1186,7 +1186,7 @@
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-dark mb-2" href="index.jsp"></i>Câu chuyền về AQUAWATER</a>
                             <a class="text-dark mb-2" href="shop.html">Nhà Máy </a>
-                            <a class="text-dark mb-2" href="detail.html">Blog </a>
+                            <a class="text-dark mb-2" href="introduce.html">Blog </a>
 
                         </div>
                     </div>

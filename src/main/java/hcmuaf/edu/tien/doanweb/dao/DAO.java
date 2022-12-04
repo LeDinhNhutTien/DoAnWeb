@@ -19,7 +19,7 @@ public class DAO {
     // load san pham
     public List<ProductEntity> getAllProduct() {
         List<ProductEntity> products = new ArrayList<>();
-        String sql = "SELECT * FROM products ";
+        String sql = "SELECT id,name,price,image,description FROM products ";
         try {
             conn = ConnectionUtil.getConnection();
             ps = conn.prepareStatement(sql);
@@ -35,10 +35,10 @@ public class DAO {
         }
         return products;
     }
-    //
+    // lấy ra những ở sp từng danh muc
     public List<ProductEntity> getProductByCateID(String cid) {
         List<ProductEntity> products = new ArrayList<>();
-        String sql = "SELECT * FROM products WHERE cateID = ?";
+        String sql = "SELECT id,name,price,image,description FROM products WHERE cateID = ?";
         try {
             conn = ConnectionUtil.getConnection();
             ps = conn.prepareStatement(sql);
@@ -55,10 +55,30 @@ public class DAO {
         }
         return products;
     }
+    // lấy ra sp có id
+    public ProductEntity getProductByID(String id) {
+        String sql = "SELECT id,name,price,image,description FROM products WHERE id = ?";
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1,id);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                return new ProductEntity(rs.getInt(1),
+                        rs.getString(2), rs.getDouble(3),
+                        rs.getString(4),rs.getString(5));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     // tim kiem sp
     public List<ProductEntity> searchByName(String txtSearch) {
         List<ProductEntity> products = new ArrayList<>();
-        String sql = "SELECT * FROM products WHERE name like ?";
+        String sql = "SELECT id,name,price,image,description FROM products WHERE name like ?";
         try {
             conn = ConnectionUtil.getConnection();
             ps = conn.prepareStatement(sql);
@@ -77,7 +97,7 @@ public class DAO {
     // load danh muc
     public List<Categary> getAllCategary() {
         List<Categary> products = new ArrayList<>();
-        String sql = "SELECT * FROM category ";
+        String sql = "SELECT cid,cname,image FROM category ";
         try {
             conn = ConnectionUtil.getConnection();
             ps = conn.prepareStatement(sql);
@@ -93,7 +113,7 @@ public class DAO {
     }
     // Đăng nhập
     public User login(String user, String pass){
-        String query = "select * from account \n" + "where user = ?\n" + "and pass = ?";
+        String query = "select id,user,pass,fullname,role from account \n" + "where user = ?\n" + "and pass = ?";
         try {
             conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
             ps = conn.prepareStatement(query);
@@ -111,7 +131,7 @@ public class DAO {
     }
     // kiểm tra tài khoản đã tồn tại hay chưa
     public User checkAccountExits(String user){
-        String query = "select * from account \n" + "where user = ?\n" + "and pass = ?";
+        String query = "select id,user,pass,fullname,role from account \n" + "where user = ?\n" + "and pass = ?";
         try {
             conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
             ps = conn.prepareStatement(query);

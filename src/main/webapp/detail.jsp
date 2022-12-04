@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,97 +33,17 @@
 <body>
 
 <!-- Topbar Start -->
-<div class="header-container" style="margin: auto">
-  <div class="container-fluid container-header ">
-    <div class="row align-items-center py-3 px-xl-5">
-      <div class="col-lg-3 d-none d-lg-block">
-        <a href="" class="text-decoration-none">
-          <img width="250" src="img/Title/logo1.png" alt="">
-        </a>
-      </div>
-      <div class="col-lg-6 col-6 text-left">
-        <form action="">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Bạn tìm gì...">
-            <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="col-lg-3 col-6 text-right">
-        <a href="cart.html" class="btn gio_hang">
-          <i class="fas blue fa-shopping-cart text-primary"></i>
-          <span class="badge">Giỏ hàng</span>
-        </a>
-        <div class="btn user-toggle" onclick="menuToggle()" style="margin-right: -15px">
-          <i class="fas blue fa-solid fa-user text-primary"></i>
-          <span class="badge" >Tài khoản</span>
-<!--          <div class="action">-->
-<!--            <div class="menu">-->
-<!--              <div class="profile" style="margin: auto">-->
-<!--                <img src="img/product/avt.jpg">-->
-<!--              </div>-->
-<!--              <h3>Tài Tiến Thiện</h3>-->
-<!--              <ul style="padding: 0">-->
-<!--                <li><i class="fas fa-user"></i><a href="#">Hồ sơ của tôi</a></li>-->
-<!--                <li><i class="fas fa-edit"></i><a href="#">Chỉnh sửa hồ sơ</a></li>-->
-<!--                <li><i class="fas fa-envelope"></i><a href="#">Liên hệ</a></li>-->
-<!--                <li><i class="fas fa-cog"></i><a href="#">Cài đặt</a></li>-->
-<!--                <li><i class="fas fa-hands-helping"></i><a href="#">Hỗ trợ</a></li>-->
-<!--                <li><i class="fas fa-sign-out-alt"></i><a href="#">Đăng xuất</a></li>-->
-<!--              </ul>-->
-<!--            </div>-->
-<!--          </div>-->
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Topbar 2   -->
-  <div class="container-fluid container-header2 pt-0">
-    <div class="row align-items-center py-3 px-xl-5"style="justify-content: space-between;">
-      <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-          <div class="navbar-nav mr-auto py-0 ">
-            <a href="index.jsp" class="nav-item nav-link active">Trang chủ</a>
-            <div class="nav-item dropdown">
-              <a href="shop.html" class="nav-link dropdown-toggle" data-toggle="dropdown">Sản phẩm</a>
-              <div class="dropdown-menu rounded-0 m-0">
-                <a href="product.jsp" class="dropdown-item">Hãng Karofi</a>
-                <a href="product-huyndai.html" class="dropdown-item">Hãng Hyundai</a>
-                <a href="product-kangaroo.html" class="dropdown-item">Hãng Kangaroo</a>
-                <a href="product-sunhouse.html" class="dropdown-item">Hãng Sunhouse</a>
-              </div>
-            </div>
-            <a href="detail.html" class="nav-item nav-link">Giới thiệu</a>
-            <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
-          </div>
-        </div>
-      </nav>
-
-      <div class="col-lg-3 col-6 ml-5 text-right " style="display: flex;padding: 0 15px;justify-content: flex-end ;gap: 50px">
-        <a href="login.jsp" class="btn border border-back float-left">
-          Đăng nhập
-        </a>
-        <a href="sign_up.jsp" class="btn border border-back">
-          Đăng ký
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+<jsp:include page="menu.jsp"></jsp:include>
 <!-- Topbar End -->
 
 <!-- Page Header Start -->
 <div class="container-fluid bg-secondary mb-5">
   <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 250px;margin-top: 111px">
-    <h1 class="font-weight-semi-bold text-uppercase mb-3" style="font-size: 24px;"> Chi tiết Sản phẩm hãng hyundai</h1>
+    <h1 class="font-weight-semi-bold text-uppercase mb-3" style="font-size: 24px;"> Chi tiết Sản phẩm </h1>
     <div class="d-inline-flex">
       <p class="m-0"><a href="index.jsp" style="font-size: 15px">Trang chủ</a></p>
       <p class="m-0 px-2">-</p>
-      <p class="m-0"><a href="shop.html" style="font-size: 15px">Sản phẩm</a></p>
+      <p class="m-0"><a href="shop" style="font-size: 15px">Sản phẩm</a></p>
     </div>
   </div>
 </div>
@@ -134,20 +57,10 @@
       <div class="shop-categories">
         <div class="shop-list" style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
           <div class="shop-item" style="margin-left: 20px">
-            <img src="img/product/logo_karofi.png">
-            <a href="product.jsp"><span class="shop-categories_karofi">Hãng Karofi</span></a>
-          </div>
-          <div class="shop-item" style="margin-left: 20px">
-            <img src="img/product/logo-huyndai.webp">
-            <a href="product-huyndai.html"><span class="shop-categories_huyndai">Hãng Huyndai</span></a>
-          </div>
-          <div class="shop-item" style="margin-left: 20px">
-            <img src="img/product/logo-kangaroo.png">
-            <a href="product-kangaroo.html"><span class="shop-categories_kangaroo">Hãng Kangaroo</span></a>
-          </div>
-          <div class="shop-item" style="margin-left: 20px">
-            <img src="img/product/logo_sunhouse.jpg">
-            <a href="product-sunhouse.html"><span class="shop-categories_sunhouse">Hãng Sunhouse</span></a>
+            <c:forEach items="${listC}" var="o">
+              <img src="${o.image}">
+              <a href="category?cid=${o.cid}"><span class="shop-categories_karofi">${o.cname}</span></a>
+            </c:forEach>
           </div>
         </div>
       </div>
@@ -186,17 +99,15 @@
         <!--               bắt đầu chi tiết sản phẩm-->
         <div class="product_hyundai-detail">
           <div class="product-detail">
-            <img src="img/product/hyundai-waco.jpg">
+            <img src="${detail.image}">
             <div class="product-info">
-              <div class="product-title">
-                Máy lọc nước RO Hyundai Waco HR-800 M7 (7 Lõi lọc)
-              </div>
-              <div class="product-price">Giá: 6.660.000 VNĐ</div>
-              <div class="product-brand"> Thương hiệu: HYUNDAI - MODEL: KAD-I55</div>
+              <div class="product-title"> ${detail.name}  </div>
+              <div class="product-price">Giá: ${detail.price} VNĐ</div>
+          <!--    <div class="product-brand"> Hãng: HYUNDAI - MODEL: KAD-I55</div> -->
               <div class="product-content">
                 <div class="product-item" style="display:flex;">
                   <i class="fas fa-check-circle text-primary"></i>
-                  <p>3 chức năng Nóng, lạnh, tinh khiết</p>
+                  <p>${detail.description}</p>
                 </div>
                 <div class="product-item" style="display:flex;">
                   <i class="fas fa-check-circle text-primary"></i>
@@ -237,106 +148,9 @@
             </div>
             <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
           </div>
-          <div class="product-related">
-            <div class="product-title">Sản phẩm liên quan</div>
-            <ul class="product">
-              <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                <div class="product-item">
-                  <div class="product-image" style="position: relative">
-                    <a href="" class="product-image-maskup">
-                      <img src="img/product/hyundai-waco.jpg">
-                    </a>
-                  </div>
-                  <div class="item-icons">
-                    <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                      <li class="icon-wifi" style="padding: 0 5px">
-                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                      </li>
-                    </ul >
-                    <ul style="list-style: none; padding-left: 5px;">
-                      <li class="icon-droplet">
-                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="product-title">
-                    Máy lọc nước RO Hyundai Waco HR-800 M7 (7 Lõi lọc)</div>
-                  <div class="product-deal">
-                    <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                    <div class="product-price">6,660,000 VNĐ</div>
-                  </div>
-                  <div class="product-detail" style="margin: 0 99px;">
-                    <a href="" class="product-cat">Xem chi tiết</a>
-                  </div>
-                </div>
-              </li>
-              <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                <div class="product-item">
-                  <div class="product-image" style="position: relative">
-                    <a href="" class="product-image-maskup">
-                      <img src="img/product/Optimus.png">
-                    </a>
-                  </div>
-                  <div class="item-icons">
-                    <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                      <li class="icon-wifi" style="padding: 0 5px">
-                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                      </li>
-                    </ul >
-                    <ul style="list-style: none; padding-left: 5px;">
-                      <li class="icon-droplet">
-                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="product-title">Máy lọc nước Hyundai HDE 6501</div>
-                  <div class="product-deal">
-                    <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                    <div class="product-price">6,660,000 VNĐ</div>
-                  </div>
-                  <div class="product-detail" style="margin: 0 99px;">
-                    <a href="" class="product-cat">Xem chi tiết</a>
-                  </div>
-                </div>
-              </li>
-              <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                <div class="product-item" style="border-right: none">
-                  <div class="product-image" style="position: relative">
-                    <a href="" class="product-image-maskup">
-                      <img src="img/product/utky6n5e3ct7v.jpg">
-                    </a>
-                  </div>
-                  <div class="item-icons">
-                    <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                      <li class="icon-wifi" style="padding: 0 5px">
-                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                      </li>
-                    </ul >
-                    <ul style="list-style: none; padding-left: 5px;">
-                      <li class="icon-droplet">
-                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="product-title">Máy lọc nước R.O 9 cấp Hyundai HDE 6501</div>
-                  <div class="product-deal">
-                    <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                    <div class="product-price">6,660,000 VNĐ</div>
-                  </div>
-                  <div class="product-detail" style="margin: 0 99px;">
-                    <a href="" class="product-cat">Xem chi tiết</a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="comment-box" style="margin-bottom: 50px">
+
+
+          <div class="comment-box" style="margin-bottom: 50px; margin-top: 20px">
             <h4>Ý KIẾN KHÁCH HÀNG</h4>
             <div class="reviews" style="margin-bottom: 20px">
               <h6>Đánh giá của bạn</h6>
@@ -398,14 +212,14 @@
           <div class="d-flex flex-column justify-content-start">
             <a class="text-dark mb-2" href="index.jsp"></i>Máy lọc nước Karofi</a>
             <a class="text-dark mb-2" href="shop.html">Máy lọc nước Kangaroo </a>
-            <a class="text-dark mb-2" href="detail.html">Máy lọc nước Hyundai </a>
+            <a class="text-dark mb-2" href="introduce.html">Máy lọc nước Hyundai </a>
             <a class="text-dark mb-2" href="cart.html">Máy lọc nước Sunhouse </a>
           </div>
           <h5 style="margin-top: 1.5rem;" class="font-weight-bold text-dark mb-4">Phụ kiện khác</h5>
           <div class="d-flex flex-column justify-content-start">
             <a class="text-dark mb-2" href="index.jsp"></i>Lõi lọc nước</a>
             <a class="text-dark mb-2" href="shop.html">Bút thử nước </a>
-            <a class="text-dark mb-2" href="detail.html">Cốc lọc nước </a>
+            <a class="text-dark mb-2" href="introduce.html">Cốc lọc nước </a>
 
 
 
@@ -425,7 +239,7 @@
           <div class="d-flex flex-column justify-content-start">
             <a class="text-dark mb-2" href="index.jsp"></i>Câu chuyền về AQUAWATER</a>
             <a class="text-dark mb-2" href="shop.html">Nhà Máy </a>
-            <a class="text-dark mb-2" href="detail.html">Blog </a>
+            <a class="text-dark mb-2" href="introduce.html">Blog </a>
 
           </div>
         </div>
