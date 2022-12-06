@@ -123,7 +123,7 @@
                                     </div>
                                     <div class="product-title">${o.name}</div>
                                     <div class="product-deal">
-                                        <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
+                                        <div class="product-buy"><a href="cart?yeucau=muasp&txtmasp=${o.id}">Mua ngay</a></div>
                                         <div class="product-price">${o.price} VNĐ</div>
                                     </div>
                                     <div class="product-detail">
@@ -183,7 +183,7 @@
                         <a class="text-dark mb-2" href="index.jsp"></i>Máy lọc nước Karofi</a>
                         <a class="text-dark mb-2" href="shop.html">Máy lọc nước Kangaroo </a>
                         <a class="text-dark mb-2" href="introduce.html">Máy lọc nước Hyundai </a>
-                        <a class="text-dark mb-2" href="cart.html">Máy lọc nước Sunhouse </a>
+                        <a class="text-dark mb-2" href="cart.jsp">Máy lọc nước Sunhouse </a>
                         <a class="text-dark mb-2" href="checkout.html">Máy Lọc Nước Kangen </a>
                         <a class="text-dark" href="contact.html">Máy lọc nước Fujie </a>
 

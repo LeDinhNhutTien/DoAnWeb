@@ -26,7 +26,6 @@ public class Cart {
     }
     // lấy ra sp ở trong giỏ
     private  Item getItembyId(int id) {
-
         for (Item i : items)
             if(i.getProduct().getId() == id) return i;
         return null;

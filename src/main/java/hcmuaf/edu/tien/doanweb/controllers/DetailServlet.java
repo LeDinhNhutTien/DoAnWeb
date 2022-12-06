@@ -2,7 +2,7 @@ package hcmuaf.edu.tien.doanweb.controllers;
 
 import hcmuaf.edu.tien.doanweb.dao.DAO;
 import hcmuaf.edu.tien.doanweb.entities.Categary;
-import hcmuaf.edu.tien.doanweb.entities.ProductEntity;
+import hcmuaf.edu.tien.doanweb.entities.Product;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -16,7 +16,7 @@ public class DetailServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("pid");
         DAO dao = new DAO();
-        ProductEntity p = dao.getProductByID(id);
+        Product p = dao.getProductByID(id);
         List<Categary> listCate = dao.getAllCategary();
 
         request.setAttribute("detail",p);

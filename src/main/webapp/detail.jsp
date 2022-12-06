@@ -106,45 +106,16 @@
           <!--    <div class="product-brand"> Hãng: HYUNDAI - MODEL: KAD-I55</div> -->
               <div class="product-content">
                 <div class="product-item" style="display:flex;">
-                  <i class="fas fa-check-circle text-primary"></i>
+               <!--   <i class="fas fa-check-circle text-primary"></i> -->
                   <p>${detail.description}</p>
                 </div>
-                <div class="product-item" style="display:flex;">
-                  <i class="fas fa-check-circle text-primary"></i>
-                  <p>Tiết kiệm điện năng 40% với công nghệ bảo vệ nhiệt đa lớp</p>
-                </div>
-                <div class="product-item" style="display:flex;">
-                  <i class="fas fa-check-circle text-primary"></i>
-                  <p>Công nghệ làm lạnh Block siêu nhanh</p>
-                </div>
-                <div class="product-item" style="display:flex;">
-                  <i class="fas fa-check-circle text-primary"></i>
-                  <p>3 lõi lọc thô Smax Pro 1,2,3</p>
-                </div>
-                <div class="product-item" style="display:flex;">
-                  <i class="fas fa-check-circle text-primary"></i>
-                  <p>Màng lọc SMAX RO Purifilm chuẩn Mỹ</p>
-                </div>
-                <div class="product-item" style="display:flex;">
-                  <i class="fas fa-check-circle text-primary"></i>
-                  <p>Hệ 6 lõi Smax hiệu suất cao ngăn ngừa rò rỉ tối đa, thay thế dễ dàng</p>
-                </div>
-                <div class="product-item" style="display:flex;">
-                  <i class="fas fa-check-circle text-primary"></i>
-                  <p>Tủ kính IQ tràn viền sang trọng, mạnh mẽ</p>
-                </div>
-                <div class="product-item" style="display:flex;">
-                  <i class="fas fa-check-circle text-primary"></i>
-                  <p>Giá đã bao gồm VAT</p>
-                </div>
-
               </div>
             </div>
           </div>
           <div class="product-choose" style="display: flex">
             <div class="product-deal">
               <i class="fas fa-cart-plus text-primary"></i>
-              <a href="cart.html"style="text-decoration: none;"><div class="product-cart">Thêm vào giỏ hàng</div></a>
+              <a href="cart.jsp" style="text-decoration: none;"><div class="product-cart">Thêm vào giỏ hàng</div></a>
             </div>
             <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
           </div>
@@ -213,7 +184,7 @@
             <a class="text-dark mb-2" href="index.jsp"></i>Máy lọc nước Karofi</a>
             <a class="text-dark mb-2" href="shop.html">Máy lọc nước Kangaroo </a>
             <a class="text-dark mb-2" href="introduce.html">Máy lọc nước Hyundai </a>
-            <a class="text-dark mb-2" href="cart.html">Máy lọc nước Sunhouse </a>
+            <a class="text-dark mb-2" href="cart.jsp">Máy lọc nước Sunhouse </a>
           </div>
           <h5 style="margin-top: 1.5rem;" class="font-weight-bold text-dark mb-4">Phụ kiện khác</h5>
           <div class="d-flex flex-column justify-content-start">

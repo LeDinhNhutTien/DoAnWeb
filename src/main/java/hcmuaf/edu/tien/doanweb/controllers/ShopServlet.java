@@ -2,7 +2,7 @@ package hcmuaf.edu.tien.doanweb.controllers;
 
 import hcmuaf.edu.tien.doanweb.dao.DAO;
 import hcmuaf.edu.tien.doanweb.entities.Categary;
-import hcmuaf.edu.tien.doanweb.entities.ProductEntity;
+import hcmuaf.edu.tien.doanweb.entities.Product;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -16,7 +16,7 @@ public class ShopServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             // nhan du lieu tu DAO
         DAO dao = new DAO();
-        List<ProductEntity> listPro = dao.getAllProduct();
+        List<Product> listPro = dao.getAllProduct();
         List<Categary> listCate = dao.getAllCategary();
 
 

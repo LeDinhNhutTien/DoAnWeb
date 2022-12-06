@@ -3,24 +3,22 @@ package hcmuaf.edu.tien.doanweb.entities;
 import java.io.Serializable;
 
 public class Item implements Serializable {
-    private ProductEntity product;
+    private Product product;
     private int quantity;
     private double price;
 
     public Item() {
     }
-
-    public Item(ProductEntity product, int quantity, double price) {
+    public Item(Product product, int quantity) {
         this.product = product;
         this.quantity = quantity;
-        this.price = price;
     }
 
-    public ProductEntity getProduct() {
+    public Product getProduct() {
         return product;
     }
 
-    public void setProduct(ProductEntity product) {
+    public void setProduct(Product product) {
         this.product = product;
     }
 
@@ -39,4 +37,6 @@ public class Item implements Serializable {
     public void setPrice(double price) {
         this.price = price;
     }
+
+
 }

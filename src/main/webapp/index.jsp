@@ -59,7 +59,7 @@
                     </form>
                 </div>
                 <div class="col-lg-3 col-6 text-right">
-                    <a href="cart.html" class="btn gio_hang">
+                    <a href="cart.jsp" class="btn gio_hang">
                         <i class="fas blue fa-shopping-cart text-primary"></i>
                         <span class="badge">Giỏ hàng</span>
                     </a>
