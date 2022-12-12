@@ -39,7 +39,7 @@
 <!-- Page Header Start -->
     <div class="container-fluid bg-secondary mb-5">
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 250px;margin-top: 111px">
-        <h1 class="font-weight-semi-bold text-uppercase mb-3" style="font-size: 24px;">Sản phẩm của hãng karofi</h1>
+        <h1 class="font-weight-semi-bold text-uppercase mb-3" style="font-size: 24px;">Sản phẩm</h1>
         <div class="d-inline-flex">
             <p class="m-0"><a href="index.jsp" style="font-size: 15px">Trang chủ</a></p>
             <p class="m-0 px-2">-</p>
@@ -97,8 +97,11 @@
                     </div>
                 </div>
                 <!-- load sp -->
-                <div class="shop-overview">
+                <form name="f" action="" method="post">
+                  <div class="shop-overview">
                     <ul class="products">
+<%--                        so luong mon hang moi lan them vao gio hang--%>
+                      <input type="hidden" name="num" value="1"/>
                         <c:forEach items="${listPro}" var="o">
                             <li style="width: 31.5%; height: 100%;margin: 30px 0">
                                 <div class="product-item">
@@ -123,7 +126,10 @@
                                     </div>
                                     <div class="product-title">${o.name}</div>
                                     <div class="product-deal">
-                                        <div class="product-buy"><a href="cart?yeucau=muasp&txtmasp=${o.id}">Mua ngay</a></div>
+                                        <div class="product-buy"><a href="#" onclick="buy(${o.id})">Mua ngay</a></div>
+<%--                                        <div class="product-buy">--%>
+<%--                                            <input type="submit" onclick="buy('${o.id}')" value="Mua ngay"/>--%>
+<%--                                        </div>--%>
                                         <div class="product-price">${o.price} VNĐ</div>
                                     </div>
                                     <div class="product-detail">
@@ -133,9 +139,9 @@
                             </li>
                         </c:forEach>
 
-                    </ul>
-                </div>
-
+                     </ul>
+                  </div>
+                </form>
                 <div class="col-12 pb-1">
                     <nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center mb-3">
@@ -271,5 +277,12 @@
         "hoặc liên hệ chúng tôi qua", gty: "đế của bạn", awu: "và viết cho chúng tôi", connect: "Kết nối ngay bây giờ", button: "Viết cho chúng tôi", device: "everywhere",
     logo: "https://d2r80wdbkwti6l.cloudfront.net/pTmhkmIzK9pqU36Pv1Zl93h2oBNK9DFU.jpg", services:
         [{"name":"whatsapp","content":null}]})</script>
+//
+<script type="text/javascript">
+    function buy(id){
+        document.f.action="buy?id="+id;
+        document.f.submit();
+    }
+</script>
 </body>
 </html>

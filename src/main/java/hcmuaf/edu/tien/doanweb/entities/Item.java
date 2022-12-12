@@ -9,9 +9,11 @@ public class Item implements Serializable {
 
     public Item() {
     }
-    public Item(Product product, int quantity) {
+
+    public Item(Product product, int quantity, double price) {
         this.product = product;
         this.quantity = quantity;
+        this.price = price;
     }
 
     public Product getProduct() {

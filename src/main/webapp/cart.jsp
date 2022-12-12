@@ -59,28 +59,34 @@
                 </tr>
                 </thead>
                 <tbody class="align-middle">
-                <c:forEach items="${giohang}" var="o">
+                <c:set value="${sessionScope.cart}" var="c"/>
+                <c:forEach items="${c.items}" var="o">
                 <tr>
                     <td class="align-middle"><img src="${o.getProduct().getImage()}" alt="" style="width: 60px;
                             height:58px;margin-left: -34px;">${o.getProduct().getName()}</td>
-                    <td class="align-middle">${o.getProduct().getPrice()} VNĐ</td>
+                    <td class="align-middle">${o.getPrice()} VNĐ</td>
                     <td class="align-middle">
                         <div class="input-group quantity mx-auto" style="width: 100px;">
                             <div class="input-group-btn">
                                 <button class="btn btn-sm btn-primary btn-minus" >
-                                    <i class="fa fa-minus"></i>
+                                    <a href="proccess?num=-1&id=${o.getProduct().getId()}"><i class="fa fa-minus"></i></a>
                                 </button>
                             </div>
-                            <input type="text" class="form-control form-control-sm bg-secondary text-center" value="${o.getProduct().getQuantity()}">
+                            <input type="text" readonly class="form-control form-control-sm bg-secondary text-center" value="${o.getQuantity()}">
                             <div class="input-group-btn">
                                 <button class="btn btn-sm btn-primary  btn-plus">
-                                    <i class="fa fa-plus"></i>
+                                    <a href="proccess?num=1&id=${o.getProduct().getId()}"><i class="fa fa-plus"></i></a>
                                 </button>
                             </div>
                         </div>
                     </td>
-                    <td class="align-middle">${o.getProduct().getPrice()*o.getQuantity()} VNĐ</td>
-                    <td class="align-middle"><button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+                    <td class="align-middle">${o.getPrice()*o.getQuantity()} VNĐ</td>
+                    <td class="align-middle">
+                        <form action="proccess" method="post">
+                            <input type="hidden" name="id" value="${o.getProduct().getId()}">
+                            <button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button>
+                        </form>
+                    </td>
                 </tr>
                 </c:forEach>
                 </tbody>
@@ -111,11 +117,16 @@
                     </div>
                 </div>
                 <div class="card-footer border-secondary bg-transparent">
+                    <c:set var="totalMoney" value="${sessionScope.totalMoney}"/>
                     <div class="d-flex justify-content-between mt-2">
                         <h5 class="font-weight-bold">Tổng</h5>
-                        <h5 class="font-weight-bold">6,600,000 VNĐ</h5>
+                        <h5 class="font-weight-bold">${totalMoney} VNĐ</h5>
                     </div>
-                    <a href="thanh_toan.html" style="text-decoration: none"><button class="btn btn-block btn-primary my-3 py-3">Xác nhận mua hàng</button> </a>
+                    <form action="checkout" method="post ">
+                        <a href="thanh_toan.html" style="text-decoration: none">
+                            <button class="btn btn-block btn-primary my-3 py-3">Xác nhận mua hàng</button>
+                        </a>
+                    </form>
                 </div>
             </div>
         </div>

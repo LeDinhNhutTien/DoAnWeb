@@ -59,9 +59,10 @@
                     </form>
                 </div>
                 <div class="col-lg-3 col-6 text-right">
+                    <c:set var="size" value="${sessionScope.size}"/>
                     <a href="cart.jsp" class="btn gio_hang">
                         <i class="fas blue fa-shopping-cart text-primary"></i>
-                        <span class="badge">Giỏ hàng</span>
+                        <span class="badge">Giỏ hàng ${size}</span>
                     </a>
                     <div class="btn user-toggle" onclick="menuToggle()" style="margin-right: -15px">
                         <c:if test="${sessionScope.acc == null}">

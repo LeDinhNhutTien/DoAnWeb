@@ -6,6 +6,7 @@ import hcmuaf.edu.tien.doanweb.util.ConnectionUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +23,6 @@ public class DAO {
             conn = ConnectionUtil.getConnection();
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
-
             while (rs.next()) {
             products.add(new Product(rs.getInt(1),
                     rs.getString(2), rs.getDouble(3),
@@ -35,7 +35,25 @@ public class DAO {
     }
     // load slider
 
+    // lấy ra sp có id
+    public Product getProductByID(int id) {
+        String sql = "SELECT id,name,price,image,description FROM products WHERE id = ?";
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1,id);
+            rs = ps.executeQuery();
 
+            while (rs.next()) {
+                return new Product(rs.getInt(1),
+                        rs.getString(2), rs.getDouble(3),
+                        rs.getString(4),rs.getString(5));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     // lấy ra những ở sp từng danh muc
     public List<Product> getProductByCateID(String cid) {
@@ -56,25 +74,6 @@ public class DAO {
             e.printStackTrace();
         }
         return products;
-    }
-    // lấy ra sp có id
-    public Product getProductByID(String id) {
-        String sql = "SELECT id,name,price,image,description FROM products WHERE id = ?";
-        try {
-            conn = ConnectionUtil.getConnection();
-            ps = conn.prepareStatement(sql);
-            ps.setString(1,id);
-            rs = ps.executeQuery();
-
-            while (rs.next()) {
-                return new Product(rs.getInt(1),
-                        rs.getString(2), rs.getDouble(3),
-                        rs.getString(4),rs.getString(5));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
     // tim kiem sp
@@ -122,7 +121,7 @@ public class DAO {
             ps.setString(1,user);
             ps.setString(2,pass);
             rs = ps.executeQuery();
-            while (rs.next()){
+            if (rs.next()){
                 return  new User(rs.getInt(1),rs.getString(2),
              rs.getString(3),rs.getString(4),rs.getInt(5));
             }
@@ -160,24 +159,59 @@ public class DAO {
         }catch (Exception e){
         }
     }
-    //
-//    public Customer getAcount(String user, String pass){
-//        String query = "select * from customer \n" + "where user = ?\n" + "and pass = ?";
-//        try {
-//            conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
-//            ps = conn.prepareStatement(query);
-//            ps.setString(1,user);
-//            ps.setString(2,pass);
-//            rs = ps.executeQuery();
-//            if (rs.next()){
-//                return  new Customer(rs.getInt(1),rs.getString(2),
-//                        rs.getDouble(3),rs.getString(4),rs.getString(5));
-//            }
-//        }
-//        catch (Exception e){
-//        }
-//        return null;
-//    }
+    // khach hang dang nhap
+
+    public Customer getAcount(String user, String pass){
+        String query = "select * from customer \n" + "where user = ?\n" + "and pass = ?";
+        try {
+            conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
+            ps = conn.prepareStatement(query);
+            ps.setString(1,user);
+            ps.setString(2,pass);
+            rs = ps.executeQuery();
+            if (rs.next()){
+                return  new Customer(rs.getInt(1),rs.getString(2),
+                        rs.getDouble(3),rs.getString(4),rs.getString(5));
+            }
+        }
+        catch (Exception e){
+        }
+        return null;
+    }
+    // them vao don gian
+    public void addOrder(Customer customer,Cart cart){
+        LocalDate curDate = java.time.LocalDate.now();
+        String date = curDate.toString();
+        try{
+            // add vao bang order
+            String sql = "insert into Order values(?,?,?)";
+            conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
+            ps = conn.prepareStatement(sql);
+            ps.setString(1,date);
+            ps.setInt(2,customer.getId());
+            ps.setDouble(3,cart.getTotalMoney());
+            ps.executeUpdate();
+            // lay ra id cua Order vua add
+            String sql1 = "select top 1 id from Order order by id desc";
+            PreparedStatement ps1 = conn.prepareStatement(sql1);
+            rs = ps1.executeQuery();
+            // add vao bang OrderDetail
+            if(rs.next()){
+                int oid = rs.getInt(1);
+                for(Item i: cart.getItems()){
+                    String sql2 = "insert into OrderDetail values(?,?,?,?)";
+                    PreparedStatement ps2 = conn.prepareStatement(sql2);
+                    ps2.setInt(1,oid);
+                    ps2.setInt(2,i.getProduct().getId());
+                    ps2.setInt(3,i.getQuantity());
+                    ps2.setDouble(4,i.getPrice());
+                    ps2.executeUpdate();
+                }
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
     public static void main(String[] args) {
         DAO productDAO = new DAO();
         List<Product> products = productDAO.getProductByCateID("1");

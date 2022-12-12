@@ -16,19 +16,20 @@ public class Cart {
     public List<Item> getItems() {
         return items;
     }
-
     public void setItems(List<Item> items) {
         this.items = items;
     }
-    // trả về số lượng sp khi biết id
-    public int getQuantityById(int id){
-        return getItembyId(id).getQuantity();
-    }
+
     // lấy ra sp ở trong giỏ
     private  Item getItembyId(int id) {
         for (Item i : items)
             if(i.getProduct().getId() == id) return i;
         return null;
+    }
+    // trả về số lượng sp khi biết id
+    public int getQuantityById(int id){
+
+        return getItembyId(id).getQuantity();
     }
     // thêm sp
     public void addItem(Item i){

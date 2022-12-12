@@ -14,7 +14,7 @@ import java.util.List;
 public class DetailServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("pid");
+        int id = Integer.parseInt(request.getParameter("pid"));
         DAO dao = new DAO();
         Product p = dao.getProductByID(id);
         List<Categary> listCate = dao.getAllCategary();
