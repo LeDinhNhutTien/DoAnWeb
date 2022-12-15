@@ -45,11 +45,12 @@ public class CartServlet extends HttpServlet {
 
         // su ly du lieu cua phan gio hang
         session.setAttribute("cart",cart);
-        session.setAttribute("size",list.size()); // số lượng món đồ trong giỏ
+        // số lượng món đồ trong giỏ
+        session.setAttribute("size",list.size());
         // set lại tổng tiền all các món đồ trong giỏ hàng
         session.setAttribute("totalMoney",cart.getTotalMoney());
 
-        response.sendRedirect("shop");
+        response.sendRedirect("listProducts");
     }
 }
 

@@ -73,13 +73,13 @@
             <div class="row pb-3">
                 <div class="col-12 pb-1">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <form action="">
+                        <form action="search"  method="post">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Tìm kiếm theo tên">
+                                <input value="${txtS}" name="txt" type="text" class="form-control" placeholder="Tìm kiếm theo tên">
                                 <div class="input-group-append">
-                                        <span class="input-group-text bg-transparent text-primary">
+                                        <button class="input-group-text bg-transparent text-primary">
                                             <i class="fa fa-search"></i>
-                                        </span>
+                                        </button>
                                 </div>
                             </div>
                         </form>
@@ -102,7 +102,7 @@
                     <ul class="products">
 <%--                        so luong mon hang moi lan them vao gio hang--%>
                       <input type="hidden" name="num" value="1"/>
-                        <c:forEach items="${listPro}" var="o">
+                        <c:forEach items="${listPage}" var="o">
                             <li style="width: 31.5%; height: 100%;margin: 30px 0">
                                 <div class="product-item">
                                     <div class="product-image" style="position: relative">
@@ -145,21 +145,27 @@
                 <div class="col-12 pb-1">
                     <nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center mb-3">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" aria-label="Previous">
+<%--                             Phần phân trang --%>
+                            <c:if test="${tag >1}">
+                            <li class="page-item">
+                                <a class="page-link" href="listProducts?index=${tag-1}" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
                                     <span class="sr-only">Previous</span>
                                 </a>
                             </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            </c:if>
+
+                            <c:forEach begin="1" end="${endP}" var="i">
+                          <li class="page-item ${tag == i?"active":""}"><a class="page-link" href="listProducts?index=${i}">${i}</a></li>
+                            </c:forEach>
+                            <c:if test="${tag <endP}">
                             <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
+                                <a class="page-link" href="listProducts?index=${tag+1}" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
                                     <span class="sr-only">Next</span>
                                 </a>
                             </li>
+                            </c:if>
                         </ul>
                     </nav>
                 </div>

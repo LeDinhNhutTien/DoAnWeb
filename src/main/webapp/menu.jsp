@@ -66,14 +66,15 @@
             <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0 ">
-                        <a href="index.jsp" class="nav-item nav-link active">Trang chủ</a>
+                        <a href="home" class="nav-item nav-link active">Trang chủ</a>
                         <div class="nav-item dropdown">
-                            <a href="shop.html" class="nav-link dropdown-toggle" data-toggle="dropdown">Sản phẩm</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <c:forEach items="${listC}" var="o">
-                                    <a href="shop" class="dropdown-item">${o.cname}</a>
-                                </c:forEach>
-                            </div>
+                            <a href="shop.html" class="nav-link" data-toggle="dropdown">Sản phẩm</a>
+<%--                            <a href="shop.html" class="nav-link dropdown-toggle" data-toggle="dropdown">Sản phẩm</a>--%>
+<%--                            <div class="dropdown-menu rounded-0 m-0">--%>
+<%--                                <c:forEach items="${listC}" var="o">--%>
+<%--                                    <a href="listProducts" class="dropdown-item">${o.cname}</a>--%>
+<%--                                </c:forEach>--%>
+<%--                            </div>--%>
                         </div>
                         <a href="introduce.html" class="nav-item nav-link">Giới thiệu</a>
                         <a href="contact.html" class="nav-item nav-link">Liên hệ</a>

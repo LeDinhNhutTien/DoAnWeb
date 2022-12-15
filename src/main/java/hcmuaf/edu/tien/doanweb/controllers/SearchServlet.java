@@ -26,7 +26,7 @@ public class SearchServlet extends HttpServlet {
         List<Categary> listCate = dao.getAllCategary();
 
         //
-        request.setAttribute("listPro",list);
+        request.setAttribute("listPage",list);
         request.setAttribute("listC",listCate);
         request.setAttribute("txtS",txtSearch);
         request.getRequestDispatcher("product.jsp").forward(request,response);

@@ -18,10 +18,11 @@ public class CategoryServlet extends HttpServlet {
         // da lay dc category ve roi
         DAO dao = new DAO();
         List<Product> list = dao.getProductByCateID(cateID);
+
         List<Categary> listCate = dao.getAllCategary();
 
 
-        request.setAttribute("listPro",list);
+        request.setAttribute("listPage",list);
         request.setAttribute("listC",listCate);
         request.getRequestDispatcher("product.jsp").forward(request,response);
     }

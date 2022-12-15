@@ -97,66 +97,72 @@
           </div>
         </div>
         <!--               bắt đầu chi tiết sản phẩm-->
-        <div class="product_hyundai-detail">
-          <div class="product-detail">
-            <img src="${detail.image}">
-            <div class="product-info">
-              <div class="product-title"> ${detail.name}  </div>
-              <div class="product-price">Giá: ${detail.price} VNĐ</div>
-          <!--    <div class="product-brand"> Hãng: HYUNDAI - MODEL: KAD-I55</div> -->
-              <div class="product-content">
-                <div class="product-item" style="display:flex;">
-               <!--   <i class="fas fa-check-circle text-primary"></i> -->
-                  <p>${detail.description}</p>
+        <form name="f" action="" method="post">
+         <input type="hidden" name="num" value="1"/><%--(phan gio hang) so luong mon hang moi lan them vao gio hang--%>
+
+          <div class="product_hyundai-detail">
+            <div class="product-detail">
+              <img src="${detail.image}">
+              <div class="product-info">
+                <div class="product-title"> ${detail.name}  </div>
+                <div class="product-price">Giá: ${detail.price} VNĐ</div>
+                <!--    <div class="product-brand"> Hãng: HYUNDAI - MODEL: KAD-I55</div> -->
+                <div class="product-content">
+                  <div class="product-item" style="display:flex;">
+                    <!--   <i class="fas fa-check-circle text-primary"></i> -->
+                    <p>${detail.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-choose" style="display: flex">
+              <div class="product-deal">
+                <i class="fas fa-cart-plus text-primary"></i>
+                <%--              <a href="cart.jsp" style="text-decoration: none;"><div class="product-cart">Thêm vào giỏ hàng</div></a>--%>
+                <a href="#" onclick="buy(${detail.id})" style="text-decoration: none;">
+                  <div class="product-cart">Thêm vào giỏ hàng</div></a>
+              </div>
+              <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
+            </div>
+
+
+            <div class="comment-box" style="margin-bottom: 50px; margin-top: 20px">
+              <h4>Ý KIẾN KHÁCH HÀNG</h4>
+              <div class="reviews" style="margin-bottom: 20px">
+                <h6>Đánh giá của bạn</h6>
+                <select class="rating">
+                  <option >Xếp hạng...</option>
+                  <option >Rất tốt</option>
+                  <option >Tốt</option>
+                  <option >Trung bình</option>
+                  <option >Không tệ</option>
+                  <option >Tệ</option>
+                </select>
+              </div>
+              <div class="comment">
+                <h4>Bình luận</h4>
+                <form action="#">
+                  <input type="text" name="full-name" placeholder="Tên của bạn...">
+                  <input type="email" name="email" placeholder="Địa chỉ email...">
+                  <textarea name="comment" placeholder="Nhận xét của bạn..."></textarea>
+                  <div>
+                    <button type="submit" style="margin-bottom: 50px">Gửi đi</button></div>
+                </form>
+              </div>
+              <div class="post-comment" style="display:flex;">
+                <div class="image">
+                  <img style="width: 56px; height: 56px;" src="img/product/avt.jpg">
+                </div>
+                <div class="input-comment" onclick="commentToggel()" style="margin-left: 10px">
+                  <textarea type="text" name="full-name" placeholder="Thêm nhận xét của bạn..." ></textarea>
+                  <div class="post">
+                    <button value="submit">Post</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="product-choose" style="display: flex">
-            <div class="product-deal">
-              <i class="fas fa-cart-plus text-primary"></i>
-              <a href="cart.jsp" style="text-decoration: none;"><div class="product-cart">Thêm vào giỏ hàng</div></a>
-            </div>
-            <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-          </div>
-
-
-          <div class="comment-box" style="margin-bottom: 50px; margin-top: 20px">
-            <h4>Ý KIẾN KHÁCH HÀNG</h4>
-            <div class="reviews" style="margin-bottom: 20px">
-              <h6>Đánh giá của bạn</h6>
-              <select class="rating">
-                <option >Xếp hạng...</option>
-                <option >Rất tốt</option>
-                <option >Tốt</option>
-                <option >Trung bình</option>
-                <option >Không tệ</option>
-                <option >Tệ</option>
-              </select>
-            </div>
-            <div class="comment">
-              <h4>Bình luận</h4>
-              <form action="#">
-                <input type="text" name="full-name" placeholder="Tên của bạn...">
-                <input type="email" name="email" placeholder="Địa chỉ email...">
-                <textarea name="comment" placeholder="Nhận xét của bạn..."></textarea>
-                <div>
-                <button type="submit" style="margin-bottom: 50px">Gửi đi</button></div>
-              </form>
-            </div>
-            <div class="post-comment" style="display:flex;">
-              <div class="image">
-                <img style="width: 56px; height: 56px;" src="img/product/avt.jpg">
-              </div>
-              <div class="input-comment" onclick="commentToggel()" style="margin-left: 10px">
-                <textarea type="text" name="full-name" placeholder="Thêm nhận xét của bạn..." ></textarea>
-                <div class="post">
-                  <button value="submit">Post</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </form>
         <!--                kết thúc chi tiết sản phẩm-->
       </div>
     </div>
@@ -277,5 +283,14 @@
           "hoặc liên hệ chúng tôi qua", gty: "đế của bạn", awu: "và viết cho chúng tôi", connect: "Kết nối ngay bây giờ", button: "Viết cho chúng tôi", device: "everywhere",
   logo: "https://d2r80wdbkwti6l.cloudfront.net/pTmhkmIzK9pqU36Pv1Zl93h2oBNK9DFU.jpg", services:
           [{"name":"whatsapp","content":null}]})</script>
+// them vao gio hang
+<script type="text/javascript">
+  function buy(id){
+    document.f.action="buy?id="+id;
+    document.f.submit();
+  }
+</script>
+
+
 </body>
 </html>

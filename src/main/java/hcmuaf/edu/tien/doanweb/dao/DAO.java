@@ -15,7 +15,7 @@ public class DAO {
     private PreparedStatement ps = null;
     protected ResultSet rs = null;
 
-    // load san pham
+    // load all san pham
     public List<Product> getAllProduct() {
         List<Product> products = new ArrayList<>();
         String sql = "SELECT id,name,price,image,description FROM products ";
@@ -27,6 +27,65 @@ public class DAO {
             products.add(new Product(rs.getInt(1),
                     rs.getString(2), rs.getDouble(3),
                     rs.getString(4),rs.getString(5)));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return products;
+    }
+
+    // load san pham hot
+    public List<Product> getProducHot() {
+        List<Product> products = new ArrayList<>();
+        String sql = "SELECT id,name,price,image,description FROM products  " +
+                "where isHot =1 ORDER BY id DESC LIMIT 6";
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                products.add(new Product(rs.getInt(1),
+                        rs.getString(2), rs.getDouble(3),
+                        rs.getString(4),rs.getString(5)));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return products;
+    }
+
+    // load san pham ban chay
+    public List<Product> getProducSell() {
+        List<Product> products = new ArrayList<>();
+        String sql = "SELECT id,name,price,image,description FROM products  " +
+                "where isSell =1 ORDER BY id DESC LIMIT 6";
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                products.add(new Product(rs.getInt(1),
+                        rs.getString(2), rs.getDouble(3),
+                        rs.getString(4),rs.getString(5)));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return products;
+    }
+    // load san pham khuyen mai
+    public List<Product> getProducPromotion() {
+        List<Product> products = new ArrayList<>();
+        String sql = "SELECT id,name,price,image,description FROM products " +
+                " where isPromotion =1 ORDER BY id DESC LIMIT 6";
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                products.add(new Product(rs.getInt(1),
+                        rs.getString(2), rs.getDouble(3),
+                        rs.getString(4),rs.getString(5)));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -95,6 +154,7 @@ public class DAO {
         }
         return products;
     }
+
     // load danh muc
     public List<Categary> getAllCategary() {
         List<Categary> products = new ArrayList<>();
@@ -112,6 +172,7 @@ public class DAO {
         }
         return products;
     }
+
     // Đăng nhập
     public User login(String user, String pass){
         String query = "select id,user,pass,fullname,role from user \n" + "where user = ?\n" + "and pass = ?";
@@ -130,6 +191,7 @@ public class DAO {
         }
         return null;
     }
+
     // kiểm tra tài khoản đã tồn tại hay chưa
     public User checkAccountExits(String user){
         String query = "select id,user,pass,fullname,role from user \n" + "where user = ?\n" + "and pass = ?";
@@ -147,6 +209,7 @@ public class DAO {
         }
         return null;
     }
+
     // đăng ký tk
     public  void sign_up(String user, String pass){
         String query = "insert into user(`user`,pass,role)"+ " values(?,?,0)";
@@ -159,8 +222,8 @@ public class DAO {
         }catch (Exception e){
         }
     }
-    // khach hang dang nhap
 
+    // khach hang dang nhap
     public Customer getAcount(String user, String pass){
         String query = "select * from customer \n" + "where user = ?\n" + "and pass = ?";
         try {
@@ -178,7 +241,8 @@ public class DAO {
         }
         return null;
     }
-    // them vao don gian
+
+    // them vao don hang
     public void addOrder(Customer customer,Cart cart){
         LocalDate curDate = java.time.LocalDate.now();
         String date = curDate.toString();
@@ -212,12 +276,48 @@ public class DAO {
             System.out.println(e);
         }
     }
+
+    // đếm số lượng sp trong db
+    public  int getToltalProducts(){
+        String sql = "SELECT COUNT(*) FROM `products`";
+        try {
+            conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()){
+               return rs.getInt(1);
+            }
+        }catch (Exception e){
+        }
+        return 0;
+    }
+
+    // hàm trả về 9 sp, mỗi lần nhấn qua trang tiếp theo
+    public  List<Product> pagingProduct(int index){
+        List<Product> list = new ArrayList<>();
+        String sql = "SELECT id,name,price,image,description FROM `products` ORDER BY id LIMIT ?,9";
+        try {
+            conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1,(index-1)*9);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                list.add(new Product(rs.getInt(1),
+                        rs.getString(2), rs.getDouble(3),
+                        rs.getString(4),rs.getString(5)));
+            }
+        }catch (Exception e){
+        }
+        return list;
+    }
+
     public static void main(String[] args) {
         DAO productDAO = new DAO();
-        List<Product> products = productDAO.getProductByCateID("1");
+        List<Product> products = productDAO.getProducHot();
         for (Product product : products) {
             System.out.println(product);
         }
+
     }
 }
 

@@ -103,9 +103,9 @@
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0 ">
-                            <a href="index.jsp" class="nav-item nav-link active">Trang chủ</a>
+                            <a href="home" class="nav-item nav-link active">Trang chủ</a>
                             <div class="nav-item dropdown">
-                                <a href="shop" class="nav-link " >Sản phẩm</a>
+                                <a href="listProducts" class="nav-link " >Sản phẩm</a>
                                 <%--  dropdown-toggle  data-toggle="dropdown"--%>
 <%--                                <div class="dropdown-menu rounded-0 m-0">--%>
 <%--                                    <c:forEach items="${listC}" var="o">--%>
@@ -221,11 +221,12 @@
                     <img  src="img/product/banner1.jpg">
                 </div>
                 <ul class="products">
+                    <c:forEach items="${listHot}" var="o">
                     <li style="width: 31.5%; height: 100%;margin: 30px 0;">
                         <div class="product-item" >
                             <div class="product-image" style="position: relative">
                                 <a href="" class="product-image-maskup">
-                                    <img src="img/product/k8i.png">
+                                    <img src="${o.image}">
                                 </a>
                                 <div class="product-image-maskup-info">
                                     <ul>
@@ -253,217 +254,17 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="product-title">Máy lọc nước Karofi KT-K8I-1 </div>
+                            <div class="product-title">${o.name}</div>
                             <div class="product-deal">
                                 <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price">6,660,000 VNĐ</div>
+                                <div class="product-price">${o.price} VNĐ</div>
                             </div>
                             <div class="product-detail">
                                 <a href="product_karofi-detail.html" class="product-cat">Xem chi tiết</a>
                             </div>
                         </div>
                     </li>
-                    <li style="width: 31.5%;height: 100% ;margin: 30px 0" >
-                        <div class="product-item">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/k9iq.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>Model: KT-K9IQ-1</li>
-                                        <li>9 lõi lọc</li>
-                                        <li>Bộ vi điều khiển thông minh</li>
-                                        <li>Hiển thị thời gian thay thế của từng lõi</li>
-                                    </ul>
-                                </div>
-                                <div class="product-top">
-                                    <h4>Yêu thích</h4>
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi KT-K9IQ-1 </div>
-                            <div class="product-deal">
-                                <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price">6,660,000 VNĐ</div>
-                            </div>
-                            <div class="product-detail">
-                                <a href="detail.jsp" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                        <div class="product-item" style="border-right: none">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/kaq-u16.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>Cộng nghệ tự động sục rửa màng RO</li>
-                                        <li>Kiểu dáng nhỏ gọn tiết kiệm không gian</li>
-                                        <li>10 lõi lọc công nghệ SMAX</li>
-                                        <li>Bảo hành 36 tháng</li>
-                                    </ul>
-                                </div>
-                                <div class="product-top">
-                                    <h4>Yêu thích</h4>
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi KAQ-U16 </div>
-                            <div class="product-deal">
-                                <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price">6,660,000 VNĐ</div>
-                            </div>
-                            <div class="product-detail">
-                                <a href="product_kangaroo-detail.html" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="width: 31.5%;height: 100%;margin: 30px 0">
-                        <div class="product-item">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/karofi-ero100.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>Màng lọc RO chuyên dụng xử lý nước lợ chuẩn Mỹ</li>
-                                        <li>Khả năng xử lý nguồn nước lợ, nước mặn có TDS lên tới 5000 ppm</li>
-                                        <li>Bộ vi điều khiển thông minh</li>
-                                        <li>Hiển thị thời gian thay thế của từng lõi</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi ERO100 </div>
-                            <div class="product-deal">
-                                <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price">6,660,000 VNĐ</div>
-                            </div>
-                            <div class="product-detail">
-                                <a href="product_sunhouse-detail.html" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="width: 31.5%;height: 100%;margin: 30px 0">
-                        <div class="product-item">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/karofi-ero102.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>Vòi nước Tubor lấy nước nhanh tới 3L/phút.</li>
-                                        <li>Công nghệ Smax với bộ lõi hiệu suất cao tránh rò rỉ, tối ưu cút nối</li>
-                                        <li>Màng RO thay nhanh Mỹ</li>
-                                        <li>Bảo hành 36 tháng</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi ERO102 </div>
-                            <div class="product-deal">
-                                <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price">6,660,000 VNĐ</div>
-                            </div>
-                            <div class="product-detail">
-                                <a href="product_karofi-detail.html" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="width: 31.5%;height: 100%;margin: 30px 0">
-                        <div class="product-item" style="border-right: none">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/karofi-ero110.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>Lọc nước nhiễm canxi, Magie với lõi Cation exchange</li>
-                                        <li>Máy sở hữu 11 lõi đầu tiên của Karofi</li>
-                                        <li>Màng RO nhập khẩu Mỹ</li>
-                                        <li>Bảo hành 36 tháng</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi KT-K8I-1 </div>
-                            <div class="product-deal">
-                                <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price">6,660,000 VNĐ</div>
-                            </div>
-                            <div class="product-detail ">
-                                <a href="detail.jsp" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
+                    </c:forEach>
                 </ul>
                 <div class="see-more" style="text-align: center; margin-bottom: 30px">
                     <a style="text-decoration: none" href="shop.html">Xem thêm</a>
@@ -479,11 +280,12 @@
                     <img  src="img/product/banner.jpg">
                 </div>
                 <ul class="products">
+                    <c:forEach items="${listHot}" var="o">
                     <li style="width: 31.5%; height: 100%;margin: 30px 0">
                         <div class="product-item">
                             <div class="product-image" style="position: relative">
                                 <a href="" class="product-image-maskup">
-                                    <img src="img/product/karofi-kaq-o07.png">
+                                    <img src="${o.image}">
                                 </a>
                                 <div class="product-image-maskup-info">
                                     <ul>
@@ -511,226 +313,17 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="product-title">Máy lọc nước Karofi KAQ-O07 </div>
+                            <div class="product-title">${o.name}</div>
                             <div class="product-deal">
                                 <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price">6,660,000 VNĐ</div>
+                                <div class="product-price">${o.price} VNĐ</div>
                             </div>
                             <div class="product-detail">
                                 <a href="product_kangaroo-detail.html" class="product-cat">Xem chi tiết</a>
                             </div>
                         </div>
                     </li>
-                    <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                        <div class="product-item">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/karofi-kaq-p95.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>Công nghệ thông minh AioTec kết nối wifi.</li>
-                                        <li>10 Lõi lọc SMAX hiệu quả cao mạnh mẽ</li>
-                                        <li>Màng RO 100GPD thay nhanh Mỹ.</li>
-                                        <li>Gấp đôi Hydrogen</li>
-                                    </ul>
-                                </div>
-                                <div class="product-top">
-                                    <img src="img/product/top.png">
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi KAQ-P95 </div>
-                            <div class="product-deal">
-                                <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price">6,660,000 VNĐ</div>
-                            </div>
-                            <div class="product-detail">
-                                <a href="product-sunhouse.html" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                        <div class="product-item" style="border-right: none">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/kaq-u16.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>Màng RO 100GPD Purifim/ 50GPD (Mỹ)</li>
-                                        <li>Công suất: 10L/H - 20L/H</li>
-                                        <li>Bộ vi mạch điều khiển thông minh</li>
-                                        <li>Bảo hành: 36 tháng</li>
-                                    </ul>
-                                </div>
-                                <div class="product-top">
-                                    <img src="img/product/top.png">
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi sRO </div>
-                            <div class="product-deal">
-                                <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price">6,660,000 VNĐ</div>
-                            </div>
-                            <div class="product-detail">
-                                <a href="product_sunhouse-detail.html" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                        <div class="product-item">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/karofi-kaq-u05.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>10 lõi lọc mạnh mẽ</li>
-                                        <li>Tích hợp bộ lõi chức năng Smax hiệu quả cao</li>
-                                        <li>Thiết kế để gầm nhỏ gọn</li>
-                                        <li>Màng RO thay nhanh Mỹ</li>
-                                    </ul>
-                                </div>
-                                <div class="product-top">
-                                    <img src="img/product/top.png">
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi KAQ-U05</div>
-                            <div class="product-deal">
-                                <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price">6,660,000 VNĐ</div>
-                            </div>
-                            <div class="product-detail">
-                                <a href="product_karofi-detail.html" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                        <div class="product-item">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/karofi-sro.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>Kiểm soát chất lượng thông minh nhờ công nghệ AioTec.</li>
-                                        <li>Hệ thống 10 lõi lọc mạnh mẽ</li>
-                                        <li>Bổ sung khoáng chất với 6 lõi lọc chức năng</li>
-                                        <li>Màng lọc RO chuẩn Mỹ</li>
-                                    </ul>
-                                </div>
-                                <div class="product-top">
-                                    <img src="img/product/top.png">
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi KAQ-U95 </div>
-                            <div class="product-deal">
-                                <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price">6,660,000 VNĐ</div>
-                            </div>
-                            <div class="product-detail">
-                                <a href="detail.jsp" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                        <div class="product-item" style="border-right: none">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/karofi-ero110.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>Lọc nước nhiễm canxi, Magie với lõi Cation exchange</li>
-                                        <li>Máy sở hữu 11 lõi đầu tiên của Karofi</li>
-                                        <li>Màng RO nhập khẩu Mỹ</li>
-                                        <li>Bảo hành 36 tháng</li>
-                                    </ul>
-                                </div>
-                                <div class="product-top">
-                                    <img src="img/product/top.png">
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi KT-K8I-1 </div>
-                            <div class="product-deal">
-                                <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price">6,660,000 VNĐ</div>
-                            </div>
-                            <div class="product-detail">
-                                <a href="detail.jsp" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
+                    </c:forEach>
                 </ul>
                 <div class="see-more" style="text-align: center; margin-bottom: 30px">
                     <a style="text-decoration: none" href="shop.html">Xem thêm</a>
@@ -746,299 +339,64 @@
                     <img  src="img/product/banner2.jpg">
                 </div>
                 <ul class="products">
-                    <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                        <div class="product-item">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/karofi-sro.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>Kiểm soát chất lượng thông minh nhờ công nghệ AioTec.</li>
-                                        <li>Hệ thống 10 lõi lọc mạnh mẽ</li>
-                                        <li>Bổ sung khoáng chất với 6 lõi lọc chức năng</li>
-                                        <li>Màng lọc RO chuẩn Mỹ</li>
+                    <c:forEach items="${listPromotion}" var="o">
+                        <li style="width: 31.5%; height: 100%;margin: 30px 0">
+                            <div class="product-item">
+                                <div class="product-image" style="position: relative">
+                                    <a href="" class="product-image-maskup">
+                                        <img src="${o.image}">
+                                    </a>
+                                    <div class="product-image-maskup-info">
+                                        <ul>
+                                            <li>Kiểm soát chất lượng thông minh nhờ công nghệ AioTec.</li>
+                                            <li>Hệ thống 10 lõi lọc mạnh mẽ</li>
+                                            <li>Bổ sung khoáng chất với 6 lõi lọc chức năng</li>
+                                            <li>Màng lọc RO chuẩn Mỹ</li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-top">
+                                        <span class="percent">18%</span>
+                                        <span class="reduce">giảm</span>
+                                    </div>
+                                </div>
+                                <div class="item-icons">
+                                    <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
+                                        <li class="icon-wifi" style="padding: 0 5px">
+                                            <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
+                                            <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
+                                        </li>
+                                    </ul >
+                                    <ul style="list-style: none; padding-left: 5px;">
+                                        <li class="icon-droplet">
+                                            <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
+                                            <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
+                                        </li>
                                     </ul>
                                 </div>
-                                <div class="product-top">
-                                    <span class="percent">18%</span>
-                                    <span class="reduce">giảm</span>
+                                <div class="product-title">${o.name}</div>
+                                <div class="product-deal">
+                                    <div class="product-buy" style="margin-top: 10px;"><a href="buynow.html">Mua ngay</a></div>
+                                    <div class="product-price-sale">
+                                        <div class="product-price">${o.price} VNĐ</div>
+                                        <div class="empty"></div>
+                                        <div class="price-sale">5,461,200 VNĐ </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi KAQ-Y79 </div>
-                            <div class="product-deal">
-                                <div class="product-buy" style="margin-top: 10px;"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price-sale">
-                                    <div class="product-price">6,660,000 VNĐ</div>
-                                    <div class="empty"></div>
-                                    <div class="price-sale">5,461,200 VNĐ </div>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <a href="product_sunhouse-detail.html" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                        <div class="product-item">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/karofi-kaq-p95.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>Công nghệ thông minh AioTec kết nối wifi.</li>
-                                        <li>10 Lõi lọc SMAX hiệu quả cao mạnh mẽ</li>
-                                        <li>Màng RO 100GPD thay nhanh Mỹ.</li>
-                                        <li>Gấp đôi Hydrogen</li>
-                                    </ul>
-                                </div>
-                                <div class="product-top">
-                                    <span class="percent">19%</span>
-                                    <span class="reduce">giảm</span>
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi KAQ-P95 </div>
-                            <div class="product-deal">
-                                <div class="product-buy"style="margin-top: 10px"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price-sale">
-                                    <div class="product-price">6,660,000 VNĐ</div>
-                                    <div class="empty"></div>
-                                    <div class="price-sale">5,394,600 VNĐ </div>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <a href="product_karofi-detail.html" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                        <div class="product-item" style="border-right: none">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/kaq-u16.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>Màng RO 100GPD Purifim/ 50GPD (Mỹ)</li>
-                                        <li>Công suất: 10L/H - 20L/H</li>
-                                        <li>Bộ vi mạch điều khiển thông minh</li>
-                                        <li>Bảo hành: 36 tháng</li>
-                                    </ul>
-                                </div>
-                                <div class="product-top">
-                                    <span class="percent">20%</span>
-                                    <span class="reduce">giảm</span>
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi sRO </div>
-                            <div class="product-deal">
-                                <div class="product-buy"style="margin-top: 10px"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price-sale">
-                                    <div class="product-price">6,660,000 VNĐ</div>
-                                    <div class="empty"></div>
-                                    <div class="price-sale">5,328,000 VNĐ </div>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <a href="product_kangaroo-detail.html" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                        <div class="product-item">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/karofi-kaq-u05.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>10 lõi lọc mạnh mẽ</li>
-                                        <li>Tích hợp bộ lõi chức năng Smax hiệu quả cao</li>
-                                        <li>Thiết kế để gầm nhỏ gọn</li>
-                                        <li>Màng RO thay nhanh Mỹ</li>
-                                    </ul>
-                                </div>
-                                <div class="product-top">
-                                    <span class="percent">20%</span>
-                                    <span class="reduce">giảm</span>
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi KAQ-U05</div>
-                            <div class="product-deal">
-                                <div class="product-buy"style="margin-top: 10px"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price-sale">
-                                    <div class="product-price">6,660,000 VNĐ</div>
-                                    <div class="empty"></div>
-                                    <div class="price-sale">5,328,000 VNĐ </div>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <a href="product_sunhouse-detail.html" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                        <div class="product-item">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/karofi-sro.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>Kiểm soát chất lượng thông minh nhờ công nghệ AioTec.</li>
-                                        <li>Hệ thống 10 lõi lọc mạnh mẽ</li>
-                                        <li>Bổ sung khoáng chất với 6 lõi lọc chức năng</li>
-                                        <li>Màng lọc RO chuẩn Mỹ</li>
-                                    </ul>
-                                </div>
-                                <div class="product-top">
-                                    <span class="percent">18%</span>
-                                    <span class="reduce">giảm</span>
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi KAQ-U95 </div>
-                            <div class="product-deal">
-                                <div class="product-buy"style="margin-top: 10px"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price-sale">
-                                    <div class="product-price">6,660,000 VNĐ</div>
-                                    <div class="empty"></div>
-                                    <div class="price-sale">5,461,200 VNĐ </div>
-                                </div>
-                            </div>
-                            <div class="product-detail">
                                 <div class="product-detail">
-                                    <a href="detail.jsp" class="product-cat">Xem chi tiết</a>
+                                    <a href="product_sunhouse-detail.html" class="product-cat">Xem chi tiết</a>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-
-                    <li style="width: 31.5%; height: 100%;margin: 30px 0">
-                        <div class="product-item" style="border-right: none">
-                            <div class="product-image" style="position: relative">
-                                <a href="" class="product-image-maskup">
-                                    <img src="img/product/karofi-ero110.png">
-                                </a>
-                                <div class="product-image-maskup-info">
-                                    <ul>
-                                        <li>Lọc nước nhiễm canxi, Magie với lõi Cation exchange</li>
-                                        <li>Máy sở hữu 11 lõi đầu tiên của Karofi</li>
-                                        <li>Màng RO nhập khẩu Mỹ</li>
-                                        <li>Bảo hành 36 tháng</li>
-                                    </ul>
-                                </div>
-                                <div class="product-top">
-                                    <span class="percent">19%</span>
-                                    <span class="reduce">giảm</span>
-                                </div>
-                            </div>
-                            <div class="item-icons">
-                                <ul style="list-style: none; padding-left: 0; border-right: 1px solid #555">
-                                    <li class="icon-wifi" style="padding: 0 5px">
-                                        <i class="fas fa-wifi text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="padding-right: 10px; margin-bottom: 0; color: #6c757d;font-size: 10px">AloTec</p>
-                                    </li>
-                                </ul >
-                                <ul style="list-style: none; padding-left: 5px;">
-                                    <li class="icon-droplet">
-                                        <i class="fas fa-water text-primary" style="color: #6c757d;font-size: 10px"></i>
-                                        <p style="margin-bottom: 0;color: #6c757d; font-size: 10px">Tinh Khuyết</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="product-title">Máy lọc nước Karofi KT-K8I-1 </div>
-                            <div class="product-deal">
-                                <div class="product-buy"style="margin-top: 10px"><a href="buynow.html">Mua ngay</a></div>
-                                <div class="product-price-sale">
-                                    <div class="product-price">6,660,000 VNĐ</div>
-                                    <div class="empty"></div>
-                                    <div class="price-sale">5,394,600 VNĐ </div>
-                                </div>
-                            </div>
-                            <div class="product-detail">
-                                <a href="detail.jsp" class="product-cat">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </li>
+                        </li>
+                    </c:forEach>
                 </ul>
                 <div class="see-more" style="text-align: center; margin-bottom: 30px">
                     <a style="text-decoration: none" href="shop.html">Xem thêm</a>
                 </div>
             </div>
+             </div>
+         </div>
         </div>
     </div>
-
 
     <!-- Categories End -->
 

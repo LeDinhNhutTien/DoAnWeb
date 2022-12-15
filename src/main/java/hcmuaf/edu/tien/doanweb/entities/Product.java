@@ -9,6 +9,8 @@ public class Product {
     private String description;
     private int cateID;
     private int sell_ID;
+    private int isHot;
+    private int isSell;
     public Product() {
     }
 

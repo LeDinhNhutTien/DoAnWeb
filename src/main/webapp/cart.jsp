@@ -107,10 +107,10 @@
                     <h4 class="font-weight-semi-bold m-0">Thông tin đơn hàng</h4>
                 </div>
                 <div class="card-body">
-                    <div class="d-flex justify-content-between mb-3 pt-1">
-                        <h6 class="font-weight-medium">Tạm tính</h6>
-                        <h6 class="font-weight-medium">6,600,00 VNĐ</h6>
-                    </div>
+<%--                    <div class="d-flex justify-content-between mb-3 pt-1">--%>
+<%--                        <h6 class="font-weight-medium">Tạm tính</h6>--%>
+<%--                        <h6 class="font-weight-medium">6,600,00 VNĐ</h6>--%>
+<%--                    </div>--%>
                     <div class="d-flex justify-content-between">
                         <h6 class="font-weight-medium">Phí giao hàng</h6>
                         <h6 class="font-weight-medium">0 VNĐ</h6>
