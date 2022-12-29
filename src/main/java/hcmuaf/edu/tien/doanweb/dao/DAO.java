@@ -25,7 +25,7 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
             products.add(new Product(rs.getInt(1),
-                    rs.getString(2), rs.getDouble(3),
+                    rs.getString(2), rs.getInt(3),
                     rs.getString(4),rs.getString(5)));
             }
         } catch (Exception e) {
@@ -45,7 +45,7 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 products.add(new Product(rs.getInt(1),
-                        rs.getString(2), rs.getDouble(3),
+                        rs.getString(2), rs.getInt(3),
                         rs.getString(4),rs.getString(5)));
             }
         } catch (Exception e) {
@@ -65,7 +65,7 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 products.add(new Product(rs.getInt(1),
-                        rs.getString(2), rs.getDouble(3),
+                        rs.getString(2), rs.getInt(3),
                         rs.getString(4),rs.getString(5)));
             }
         } catch (Exception e) {
@@ -73,6 +73,7 @@ public class DAO {
         }
         return products;
     }
+
     // load san pham khuyen mai
     public List<Product> getProducPromotion() {
         List<Product> products = new ArrayList<>();
@@ -84,7 +85,7 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 products.add(new Product(rs.getInt(1),
-                        rs.getString(2), rs.getDouble(3),
+                        rs.getString(2), rs.getInt(3),
                         rs.getString(4),rs.getString(5)));
             }
         } catch (Exception e) {
@@ -92,8 +93,23 @@ public class DAO {
         }
         return products;
     }
-    // load slider
 
+    // load slider
+        public List<Slider> getImageSlider(){
+            List<Slider> list = new ArrayList<>();
+            String sql = "SELECT id, image FROM `slider`";
+            try {
+                conn = ConnectionUtil.getConnection();
+                ps = conn.prepareStatement(sql);
+                rs = ps.executeQuery();
+                while (rs.next()){
+                    list.add(new Slider(rs.getInt(1), rs.getString(2)));
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            return list;
+        }
     // lấy ra sp có id
     public Product getProductByID(int id) {
         String sql = "SELECT id,name,price,image,description FROM products WHERE id = ?";
@@ -105,7 +121,7 @@ public class DAO {
 
             while (rs.next()) {
                 return new Product(rs.getInt(1),
-                        rs.getString(2), rs.getDouble(3),
+                        rs.getString(2), rs.getInt(3),
                         rs.getString(4),rs.getString(5));
             }
         } catch (Exception e) {
@@ -126,7 +142,7 @@ public class DAO {
 
             while (rs.next()) {
                 products.add(new Product(rs.getInt(1),
-                        rs.getString(2), rs.getDouble(3),
+                        rs.getString(2), rs.getInt(3),
                         rs.getString(4),rs.getString(5)));
             }
         } catch (Exception e) {
@@ -146,7 +162,7 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 products.add(new Product(rs.getInt(1),
-                        rs.getString(2), rs.getDouble(3),
+                        rs.getString(2), rs.getInt(3),
                         rs.getString(4),rs.getString(5)));
             }
         } catch (Exception e) {
@@ -303,7 +319,7 @@ public class DAO {
             rs = ps.executeQuery();
             while (rs.next()){
                 list.add(new Product(rs.getInt(1),
-                        rs.getString(2), rs.getDouble(3),
+                        rs.getString(2), rs.getInt(3),
                         rs.getString(4),rs.getString(5)));
             }
         }catch (Exception e){
@@ -311,10 +327,42 @@ public class DAO {
         return list;
     }
 
+    // load binh luan (comment)
+    public List<comment> DisplayComment(int masp){
+        List<comment> list = new ArrayList<>();
+        String sql = "SELECT c.username,c.content FROM comment c " +
+                "JOIN products p on c.productId = p.id where c.productId = ?";
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1,masp);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                list.add(new comment(rs.getInt(1),rs.getString(2),
+                        rs.getString(3), rs.getInt(4)));
+            }
+        }catch (Exception e){
+        }
+        return list;
+    }
+    // them binh luan (comment)
+    public void insertComment(String name,String content,int masp){
+        String sql = "INSERT into `comment`(username,content,productId) VALUES(?,?,?)";
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1,name);
+            ps.setString(2,content);
+            ps.setInt(3,masp);
+            ps.executeUpdate();
+        }catch (Exception e){
+
+        }
+    }
     public static void main(String[] args) {
         DAO productDAO = new DAO();
-        List<Product> products = productDAO.getProducHot();
-        for (Product product : products) {
+        List<Slider> products = productDAO.getImageSlider();
+        for (Slider product : products) {
             System.out.println(product);
         }
 

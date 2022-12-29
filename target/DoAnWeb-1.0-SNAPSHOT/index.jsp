@@ -144,15 +144,17 @@
             <div class="col-lg-9 align-content-center " >
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
+<%--                        <c:forEach items="${slider}" var="o">--%>
                         <div class="carousel-item active" style="height: 555px; text-align: center; ">
                             <img class="img-fluid" src="img/slider1.jpg" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center" style="justify-content: space-between;">
                                 <div class="p-3" style="max-width: 700px; margin-top: 180px">
                                     <h4 class="text-light text-uppercase font-weight-medium mb-3">GIẢM GIÁ 10% CHO ĐƠN HÀNG ĐẦU TIÊN CỦA BẠN</h4>
-                                    <a href="shop.html" class="btn btn-light py-2 px-3" style="border-radius: 10px">MUA NGAY</a>
+                                    <a href="listProducts" class="btn btn-light py-2 px-3" style="border-radius: 10px">MUA NGAY</a>
                                 </div>
                             </div>
                         </div>
+<%--                        </c:forEach>--%>
                         <div class="carousel-item" style="height: 550px;text-align: center">
                             <img class="img-fluid" src="img/slider2.jpg" alt="Image">
                         </div>
@@ -211,7 +213,11 @@
     <!-- Categories Start Product -->
 
     <div id="product-shop">
-        <div class="container p-0">
+        <form name="f" action="" method="post">
+            <%--                        so luong mon hang moi lan them vao gio hang--%>
+            <input type="hidden" name="num" value="1"/>
+            <div class="container p-0">
+
             <!--        sản phẩm hot-->
             <div class="product-hot">
                 <div class="headline">
@@ -256,11 +262,11 @@
                             </div>
                             <div class="product-title">${o.name}</div>
                             <div class="product-deal">
-                                <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
+                                <div class="product-buy"><a href="#" onclick="buy(${o.id})">Mua ngay</a></div>
                                 <div class="product-price">${o.price} VNĐ</div>
                             </div>
                             <div class="product-detail">
-                                <a href="product_karofi-detail.html" class="product-cat">Xem chi tiết</a>
+                                <a href="detail?pid=${o.id}" class="product-cat">Xem chi tiết</a>
                             </div>
                         </div>
                     </li>
@@ -315,11 +321,11 @@
                             </div>
                             <div class="product-title">${o.name}</div>
                             <div class="product-deal">
-                                <div class="product-buy"><a href="buynow.html">Mua ngay</a></div>
+                                <div class="product-buy"><a href="#" onclick="buy(${o.id})">Mua ngay</a></div>
                                 <div class="product-price">${o.price} VNĐ</div>
                             </div>
                             <div class="product-detail">
-                                <a href="product_kangaroo-detail.html" class="product-cat">Xem chi tiết</a>
+                                <a href="detail?pid=${o.id}" class="product-cat">Xem chi tiết</a>
                             </div>
                         </div>
                     </li>
@@ -375,15 +381,15 @@
                                 </div>
                                 <div class="product-title">${o.name}</div>
                                 <div class="product-deal">
-                                    <div class="product-buy" style="margin-top: 10px;"><a href="buynow.html">Mua ngay</a></div>
+                                    <div class="product-buy" style="margin-top: 10px;"><a href="#" onclick="buy(${o.id})">Mua ngay</a></div>
                                     <div class="product-price-sale">
                                         <div class="product-price">${o.price} VNĐ</div>
                                         <div class="empty"></div>
-                                        <div class="price-sale">5,461,200 VNĐ </div>
+                                        <div class="price-sale">${o.price -(o.price *0.18)} VNĐ </div>
                                     </div>
                                 </div>
                                 <div class="product-detail">
-                                    <a href="product_sunhouse-detail.html" class="product-cat">Xem chi tiết</a>
+                                    <a href="detail?pid=${o.id}" class="product-cat">Xem chi tiết</a>
                                 </div>
                             </div>
                         </li>
@@ -394,8 +400,10 @@
                 </div>
             </div>
              </div>
-         </div>
-        </div>
+             </div>
+            </div>
+
+        </form>
     </div>
 
     <!-- Categories End -->
@@ -410,7 +418,7 @@
                     <div class="position-relative" style="z-index: 1;">
                         <h5 class="text-uppercase text-primary mb-3">Giảm giá 20% với những sản phẩm </h5>
                         <h1 class="mb-4 font-weight-semi-bold">Máy Lọc Nước Karofi</h1>
-                        <a href="shop.html" class="btn btn-light py-2 px-3" style="background-color: #00aeef; border-radius: 10px; border: #00aeef;color: white">MUA NGAY</a>
+                        <a href="listProducts" class="btn btn-light py-2 px-3" style="background-color: #00aeef; border-radius: 10px; border: #00aeef;color: white">MUA NGAY</a>
                     </div>
                 </div>
             </div>
@@ -420,7 +428,7 @@
                     <div class="position-relative" style="z-index: 1;">
                         <h5 class="text-uppercase text-primary mb-3">Giảm 30% khi mua ComBo Máy và lõi lọc</h5>
                         <h1 class="mb-4 font-weight-semi-bold">Thương hiệu Sunhouse</h1>
-                        <a href="shop.html" class="btn btn-light py-2 px-3" style="background-color: #00aeef; border-radius: 10px; border: #00aeef;color: white">MUA NGAY</a>
+                        <a href="listProducts" class="btn btn-light py-2 px-3" style="background-color: #00aeef; border-radius: 10px; border: #00aeef;color: white">MUA NGAY</a>
 
                     </div>
                 </div>
@@ -607,6 +615,14 @@
         "hoặc liên hệ chúng tôi qua", gty: "đế của bạn", awu: "và viết cho chúng tôi", connect: "Kết nối ngay bây giờ", button: "Viết cho chúng tôi", device: "everywhere",
     logo: "https://d2r80wdbkwti6l.cloudfront.net/pTmhkmIzK9pqU36Pv1Zl93h2oBNK9DFU.jpg", services:
         [{"name":"whatsapp","content":null}]})</script>
+
+<%-- them gio hang--%>
+<script type="text/javascript">
+    function buy(id){
+        document.f.action="buy?id="+id;
+        document.f.submit();
+    }
+</script>
 </body>
 
 </html>

@@ -17,7 +17,7 @@ public class Mod extends HttpServlet {
             request.setAttribute("error","Bạn không có quyền truy cập");
             response.sendRedirect("../login.jsp");
         }
-        response.sendRedirect("../index.jsp");
+        response.sendRedirect("../home");
     }
 
     @Override

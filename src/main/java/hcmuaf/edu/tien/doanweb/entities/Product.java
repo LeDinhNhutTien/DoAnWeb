@@ -4,7 +4,7 @@ public class Product {
 
     private int id;
     private String name;
-    private double price;
+    private int price;
     private String image;
     private String description;
     private int cateID;
@@ -14,7 +14,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(int id, String name, double price, String image, String description) {
+    public Product(int id, String name, int price, String image, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -42,7 +42,7 @@ public class Product {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

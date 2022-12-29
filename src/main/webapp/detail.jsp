@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="o" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -140,21 +141,27 @@
                 </select>
               </div>
               <div class="comment">
+
                 <h4>Bình luận</h4>
-                <form action="#">
-                  <input type="text" name="full-name" placeholder="Tên của bạn...">
-                  <input type="email" name="email" placeholder="Địa chỉ email...">
-                  <textarea name="comment" placeholder="Nhận xét của bạn..."></textarea>
+                <form name="mycomment">
+                  <input type="text" name="username" placeholder="Tên của bạn...">
+<%--                  <input type="email" name="email" placeholder="Địa chỉ email...">--%>
+                  <textarea name="content" placeholder="Nhận xét của bạn..."></textarea>
                   <div>
-                    <button type="submit" style="margin-bottom: 50px">Gửi đi</button></div>
+                    <button type="submit" onclick="Comment()" style="margin-bottom: 50px">Gửi đi</button></div>
                 </form>
+
               </div>
+              <o:forEach items="${listComment}" var="o">
+                  <p>${o.username}</p>
+                <p>${o.content}</p>
+              </o:forEach>
               <div class="post-comment" style="display:flex;">
                 <div class="image">
                   <img style="width: 56px; height: 56px;" src="img/product/avt.jpg">
                 </div>
-                <div class="input-comment" onclick="commentToggel()" style="margin-left: 10px">
-                  <textarea type="text" name="full-name" placeholder="Thêm nhận xét của bạn..." ></textarea>
+                <div  class="input-comment" onclick="commentToggel()" style="margin-left: 10px">
+                  <textarea id="myform" type="text" name="full-name" placeholder="Thêm nhận xét của bạn..." ></textarea>
                   <div class="post">
                     <button value="submit">Post</button>
                   </div>
@@ -290,7 +297,30 @@
     document.f.submit();
   }
 </script>
+// them comment
+<script type="text/javascript">
+  function Comment(){
+    var xhttp;
+    var username = document.mycomment.username.value;
+    var content = document.mycomment.content.value;
+    var url = "detail?username=" +username+"&content="+content;
+    if(window.XMLHttpRequest){
+      xhttp = new XMLHttpRequest();
+    }else{
+      xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.onreadystatechange = function (){
+      if(xhttp.readyState == 4) {
+        var data = xhttp.responseText;
+        document.getElementById("myform").innerHTML = data;
+      }
+    }
 
+    xhttp.open("POST",url,true);
+    xhttp.send();
+  }
+
+</script>
 
 </body>
 </html>

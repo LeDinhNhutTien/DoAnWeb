@@ -41,9 +41,9 @@
     <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 250px;margin-top: 111px">
         <h1 class="font-weight-semi-bold text-uppercase mb-3" style="font-size: 24px;">Sản phẩm</h1>
         <div class="d-inline-flex">
-            <p class="m-0"><a href="index.jsp" style="font-size: 15px">Trang chủ</a></p>
+            <p class="m-0"><a href="home" style="font-size: 15px">Trang chủ</a></p>
             <p class="m-0 px-2">-</p>
-            <p class="m-0"><a href="shop" style="font-size: 15px">Sản phẩm</a></p>
+            <p class="m-0"><a href="listProducts" style="font-size: 15px">Sản phẩm</a></p>
         </div>
     </div>
 </div>
@@ -73,6 +73,7 @@
             <div class="row pb-3">
                 <div class="col-12 pb-1">
                     <div class="d-flex align-items-center justify-content-between mb-4">
+<%--                       tim kiếm--%>
                         <form action="search"  method="post">
                             <div class="input-group">
                                 <input value="${txtS}" name="txt" type="text" class="form-control" placeholder="Tìm kiếm theo tên">
@@ -283,7 +284,7 @@
         "hoặc liên hệ chúng tôi qua", gty: "đế của bạn", awu: "và viết cho chúng tôi", connect: "Kết nối ngay bây giờ", button: "Viết cho chúng tôi", device: "everywhere",
     logo: "https://d2r80wdbkwti6l.cloudfront.net/pTmhkmIzK9pqU36Pv1Zl93h2oBNK9DFU.jpg", services:
         [{"name":"whatsapp","content":null}]})</script>
-//
+<%-- them gio hang--%>
 <script type="text/javascript">
     function buy(id){
         document.f.action="buy?id="+id;
