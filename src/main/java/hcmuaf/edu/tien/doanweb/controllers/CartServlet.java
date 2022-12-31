@@ -32,7 +32,7 @@ public class CartServlet extends HttpServlet {
         int num =Integer.parseInt(request.getParameter("num")); // moi lan them vao gio hang 1 cai
         DAO dao = new DAO();
         Product p = dao.getProductByID(id);
-        double price = p.getPrice();
+        int price = p.getPrice();
         Item t = new Item(p,num,price);
         cart.addItem(t); // them
 

@@ -3,12 +3,12 @@ package hcmuaf.edu.tien.doanweb.entities;
 public class OderDetail {
     private int oid,pid;
     private  int quantity;
-    private double price;
+    private int price;
 
     public OderDetail() {
     }
 
-    public OderDetail(int oid, int pid, int quantity, double price) {
+    public OderDetail(int oid, int pid, int quantity, int price) {
         this.oid = oid;
         this.pid = pid;
         this.quantity = quantity;
@@ -43,7 +43,7 @@ public class OderDetail {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }

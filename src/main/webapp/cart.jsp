@@ -82,6 +82,7 @@
                     </td>
                     <td class="align-middle">${o.getPrice()*o.getQuantity()} VNĐ</td>
                     <td class="align-middle">
+                        <%--nut xoa--%>
                         <form action="proccess" method="post">
                             <input type="hidden" name="id" value="${o.getProduct().getId()}">
                             <button class="btn btn-sm btn-primary"><i class="fa fa-times"></i></button>
@@ -122,10 +123,10 @@
                         <h5 class="font-weight-bold">Tổng</h5>
                         <h5 class="font-weight-bold">${totalMoney} VNĐ</h5>
                     </div>
-                    <form action="checkout" method="post ">
-                        <a href="thanh_toan.html" style="text-decoration: none">
-                            <button class="btn btn-block btn-primary my-3 py-3">Xác nhận mua hàng</button>
-                        </a>
+                    <form action="checkout" method="post">
+<%--                        <a href="thanh_toan.html" style="text-decoration: none"> </a>--%>
+<%--                            <button type="submit" class="btn btn-block btn-primary my-3 py-3">Xác nhận mua hàng</button>--%>
+                    <input type="submit" class="btn btn-block btn-primary my-3 py-3" value="Xác nhận mua hàng">
                     </form>
                 </div>
             </div>

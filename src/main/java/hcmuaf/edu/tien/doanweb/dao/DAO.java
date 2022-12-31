@@ -239,58 +239,60 @@ public class DAO {
         }
     }
 
-    // khach hang dang nhap
-    public Customer getAcount(String user, String pass){
-        String query = "select * from customer \n" + "where user = ?\n" + "and pass = ?";
-        try {
-            conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
-            ps = conn.prepareStatement(query);
-            ps.setString(1,user);
-            ps.setString(2,pass);
-            rs = ps.executeQuery();
-            if (rs.next()){
-                return  new Customer(rs.getInt(1),rs.getString(2),
-                        rs.getDouble(3),rs.getString(4),rs.getString(5));
-            }
-        }
-        catch (Exception e){
-        }
-        return null;
-    }
-
     // them vao don hang
-    public void addOrder(Customer customer,Cart cart){
+    public void addOrder(User customer,Cart cart){
         LocalDate curDate = java.time.LocalDate.now();
         String date = curDate.toString();
         try{
             // add vao bang order
-            String sql = "insert into Order values(?,?,?)";
+            String sql = "insert into orders(dateOrder,userId,totalmoney) values(?,?,?)";
             conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
             ps = conn.prepareStatement(sql);
             ps.setString(1,date);
             ps.setInt(2,customer.getId());
-            ps.setDouble(3,cart.getTotalMoney());
+            ps.setInt(3,cart.getTotalMoney());
             ps.executeUpdate();
             // lay ra id cua Order vua add
-            String sql1 = "select top 1 id from Order order by id desc";
+            String sql1 = "select orderId from orders  order by orderId desc LIMIT 1";
             PreparedStatement ps1 = conn.prepareStatement(sql1);
             rs = ps1.executeQuery();
             // add vao bang OrderDetail
-            if(rs.next()){
-                int oid = rs.getInt(1);
-                for(Item i: cart.getItems()){
-                    String sql2 = "insert into OrderDetail values(?,?,?,?)";
+            if(rs.next()) {
+                int oid = rs.getInt("orderId");
+                for (Item i : cart.getItems()) {
+                    String sql2 = "insert into orderdetail(oid,pid,quantity,price) values(?,?,?,?)";
                     PreparedStatement ps2 = conn.prepareStatement(sql2);
-                    ps2.setInt(1,oid);
-                    ps2.setInt(2,i.getProduct().getId());
-                    ps2.setInt(3,i.getQuantity());
-                    ps2.setDouble(4,i.getPrice());
+                    ps2.setInt(1, oid);
+                    ps2.setInt(2, i.getProduct().getId());
+                    ps2.setInt(3, i.getQuantity());
+                    ps2.setInt(4, i.getPrice());
                     ps2.executeUpdate();
                 }
             }
         }catch (Exception e){
             System.out.println(e);
         }
+    }
+
+    // lay ra all cac don hang
+    public List<ListOder> getAllOrder(){
+        List<ListOder> list = new ArrayList<>();
+        String sql = "SELECT o.orderId, u.fullname, o.dateOrder, SUM(od.quantity) AS SoLuong, o.totalmoney\n" +
+                "FROM orders o, orderdetail od, `user` u\n" +
+                "WHERE od.oid = o.orderId and u.id = o.userId\n" +
+                "GROUP BY o.orderId, u.fullname, o.dateOrder, o.totalmoney";
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new ListOder(rs.getInt(1),rs.getString(2),
+                        rs.getString(3),rs.getInt(4),rs.getInt(5)));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 
     // đếm số lượng sp trong db
@@ -361,8 +363,8 @@ public class DAO {
     }
     public static void main(String[] args) {
         DAO productDAO = new DAO();
-        List<Slider> products = productDAO.getImageSlider();
-        for (Slider product : products) {
+        List<ListOder> products = productDAO.getAllOrder();
+        for (ListOder product : products) {
             System.out.println(product);
         }
 

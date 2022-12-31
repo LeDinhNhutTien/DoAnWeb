@@ -33,7 +33,7 @@ public class ProccessCartServlet extends HttpServlet {
         }else {
             DAO dao = new DAO();
             Product p = dao.getProductByID(id);
-            double price = p.getPrice();
+            int price = p.getPrice();
             Item t = new Item(p,num,price);
             cart.addItem(t);
         }
