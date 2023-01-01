@@ -19,7 +19,7 @@ public class Admin extends HttpServlet {
             response.sendRedirect("../login.jsp");
             return;
         }
-        response.sendRedirect("../quan-ly-bao-cao.jsp");
+        response.sendRedirect("../index_admin.jsp");
     }
 
     @Override

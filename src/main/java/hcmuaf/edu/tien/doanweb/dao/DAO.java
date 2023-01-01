@@ -260,12 +260,13 @@ public class DAO {
             if(rs.next()) {
                 int oid = rs.getInt("orderId");
                 for (Item i : cart.getItems()) {
-                    String sql2 = "insert into orderdetail(oid,pid,quantity,price) values(?,?,?,?)";
+                    String sql2 = "insert into orderdetail(oid,pid,quantity,price,pname) values(?,?,?,?,?)";
                     PreparedStatement ps2 = conn.prepareStatement(sql2);
                     ps2.setInt(1, oid);
                     ps2.setInt(2, i.getProduct().getId());
                     ps2.setInt(3, i.getQuantity());
                     ps2.setInt(4, i.getPrice());
+                    ps2.setString(5,i.getProduct().getName());
                     ps2.executeUpdate();
                 }
             }
@@ -277,17 +278,17 @@ public class DAO {
     // lay ra all cac don hang
     public List<ListOder> getAllOrder(){
         List<ListOder> list = new ArrayList<>();
-        String sql = "SELECT o.orderId, u.fullname, o.dateOrder, SUM(od.quantity) AS SoLuong, o.totalmoney\n" +
+        String sql = "SELECT o.orderId,od.pname, u.fullname, o.dateOrder, SUM(od.quantity) AS SoLuong, o.totalmoney\n" +
                 "FROM orders o, orderdetail od, `user` u\n" +
                 "WHERE od.oid = o.orderId and u.id = o.userId\n" +
-                "GROUP BY o.orderId, u.fullname, o.dateOrder, o.totalmoney";
+                "GROUP BY o.orderId,od.pname, u.fullname, o.dateOrder, o.totalmoney";
         try {
             conn = ConnectionUtil.getConnection();
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new ListOder(rs.getInt(1),rs.getString(2),
-                        rs.getString(3),rs.getInt(4),rs.getInt(5)));
+                list.add(new ListOder(rs.getInt(1),rs.getString(2),rs.getString(3),
+                        rs.getString(4),rs.getInt(5),rs.getInt(6)));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -329,6 +330,42 @@ public class DAO {
         return list;
     }
 
+    // lay danh sach khach hang
+    public  List<User> getAllCustomer(){
+        List<User> list = new ArrayList<>();
+        String sql = "SELECT o.userId,o.orderId,u.fullname,u.address FROM orders o, `user`u\n" +
+                "WHERE o.userId = u.id\n" +
+                "GROUP BY o.userId,o.orderId,u.fullname,u.address";
+        try {
+            conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                list.add(new User(rs.getInt(1),rs.getInt(2),rs.getString(3),
+                        rs.getString(4)));
+            }
+        }catch (Exception e){
+        }
+        return list;
+    }
+
+    // lay danh sach nguoi dung (user)
+    public  List<User> getAllUser(){
+        List<User> list = new ArrayList<>();
+        String sql = "SELECT id,user,pass,fullname,address,role FROM `user`\n";
+        try {
+            conn = ConnectionUtil.getConnection(); // mo ket noi voi mysql
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                list.add(new User(rs.getInt(1),rs.getString(2),rs.getString(3)
+                        ,rs.getString(4), rs.getString(5),rs.getInt(6)));
+            }
+        }catch (Exception e){
+        }
+        return list;
+    }
+
     // load binh luan (comment)
     public List<comment> DisplayComment(int masp){
         List<comment> list = new ArrayList<>();
@@ -347,6 +384,7 @@ public class DAO {
         }
         return list;
     }
+
     // them binh luan (comment)
     public void insertComment(String name,String content,int masp){
         String sql = "INSERT into `comment`(username,content,productId) VALUES(?,?,?)";
@@ -361,12 +399,81 @@ public class DAO {
 
         }
     }
+
+    // xóa người dùng
+    public void deleteUser(int id){
+        String sql = "DELETE FROM `user` WHERE id = ?";
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1,id);
+            ps.executeUpdate();
+        }catch (Exception e){
+
+        }
+    }
+
+    // thêm người dùng
+    public void insertUser(String username,String pass,String fullname,int role,String address){
+        String sql = "INSERT into `user`(`user`,pass,fullname,role,address) VALUES(?,?,?,?,?)";
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1,username);
+            ps.setString(2,pass);
+            ps.setString(3,fullname);
+            ps.setInt(4,role);
+            ps.setString(5,address);
+            ps.executeUpdate();
+        }catch (Exception e){
+
+        }
+    }
+
+    // lấy ra người dúng vs mã id  (This method for part Update User)
+    public  User getUserById(int id){
+        String sql ="SELECT id,`user`,pass,fullname,address,role FROM `user`WHERE id = ?";
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1,id);
+            rs = ps.executeQuery();
+            if(rs.next()) {
+                return  new User(rs.getInt(1),rs.getString(2),rs.getString(3),
+                        rs.getString(4),rs.getString(5),rs.getInt(6));
+            }
+        }catch (Exception e){
+
+        }
+        return  null;
+    }
+
+    // update người dùng
+    public void updateUser(int id,String username,String pass,String fullname,int role,String address){
+        String sql = "UPDATE `user` set `user`=?,pass =?,fullname =?,\n" +
+                "role = ?,address =?\n" +
+                "WHERE id = ?";
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1,username);
+            ps.setString(2,pass);
+            ps.setString(3,fullname);
+            ps.setInt(4,role);
+            ps.setString(5,address);
+            ps.setInt(6,id);
+            ps.executeUpdate();
+        }catch (Exception e){
+
+        }
+    }
     public static void main(String[] args) {
         DAO productDAO = new DAO();
-        List<ListOder> products = productDAO.getAllOrder();
-        for (ListOder product : products) {
-            System.out.println(product);
-        }
+        System.out.println(productDAO.getUserById(31));
+//        List<User> products = productDAO.getAllCustomer();
+//        for (User product : products) {
+//            System.out.println(product);
+//        }
 
     }
 }

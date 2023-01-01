@@ -2,17 +2,27 @@ package hcmuaf.edu.tien.doanweb.entities;
 
 public class ListOder {
     private  int id;
+    private  String nameItems;
     private  String name;
     private  String date;
     private  int quantity;
     private  int totalMoney;
 
-    public ListOder(int id, String name, String date, int quantity, int totalMoney) {
+    public ListOder(int id,String nameItems, String name, String date, int quantity, int totalMoney) {
         this.id = id;
+        this.nameItems = nameItems;
         this.name = name;
         this.date = date;
         this.quantity = quantity;
         this.totalMoney = totalMoney;
+    }
+
+    public String getNameItems() {
+        return nameItems;
+    }
+
+    public void setNameItems(String nameItems) {
+        this.nameItems = nameItems;
     }
 
     public int getId() {
