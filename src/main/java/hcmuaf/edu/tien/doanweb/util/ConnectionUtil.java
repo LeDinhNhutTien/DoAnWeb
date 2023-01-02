@@ -1,5 +1,4 @@
 package hcmuaf.edu.tien.doanweb.util;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
