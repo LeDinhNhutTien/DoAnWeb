@@ -47,7 +47,7 @@
     <main class="app-content">
         <div class="app-title">
             <ul class="app-breadcrumb breadcrumb side">
-                <li class="breadcrumb-item active"><a href="#"><b>Danh sách sản phẩm</b></a></li>
+                <li class="breadcrumb-item active"><a href="#"><b>Danh sách khách hàng</b></a></li>
             </ul>
             <div id="clock"></div>
         </div>
@@ -56,10 +56,7 @@
                 <div class="tile">
                     <div class="tile-body">
                         <div class="row element-button">
-                            <div class="col-sm-2">
-                              <a class="btn btn-add btn-sm" href="form-add-san-pham.html" title="Thêm"><i class="fas fa-plus"></i>
-                                Tạo mới sản phẩm</a>
-                            </div>
+
                           </div>
                         <table class="table table-hover table-bordered" id="sampleTable">
                                 <tr>
@@ -67,7 +64,7 @@
                                     <th style="text-align: center">Mã đơn hàng</th>
                                     <th style="text-align: center">Tên khách hàng</th>
                                     <th style="text-align: center">Địa chỉ</th>
-                                    <th style="text-align: center">Chức năng</th>
+<%--                                    <th style="text-align: center">Chức năng</th>--%>
                                 </tr>
                             <c:forEach items="${adminListCustomer}" var="o">
                                 <tr>
@@ -75,12 +72,12 @@
                                     <td style="text-align: center">${o.oid}</td>
                                     <td style="text-align: center">${o.fullname}</td>
                                     <td style="text-align: center">${o.address}</td>
-                                    <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
-                                            onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> 
-                                        </button>
-                                        <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal"
-                                        data-target="#ModalUP"><i class="fas fa-edit"></i></button>
-                                    </td>
+<%--                                    <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"--%>
+<%--                                            onclick="myFunction(this)"><i class="fas fa-trash-alt"></i> --%>
+<%--                                        </button>--%>
+<%--                                        <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal"--%>
+<%--                                        data-target="#ModalUP"><i class="fas fa-edit"></i></button>--%>
+<%--                                    </td>--%>
                                 </tr>
                             </c:forEach>
 

@@ -50,7 +50,7 @@
       <ul class="app-breadcrumb breadcrumb side">
         <li class="breadcrumb-item active"><a href="#"><b>Danh sách người dùng</b></a></li>
       </ul>
-<%--      <div id="clock"></div>--%>
+      <div id="clock"></div>
     </div>
 
     <div class="row">
@@ -205,15 +205,15 @@
       }
     }
     //In dữ liệu
-    var myApp = new function () {
-      this.printTable = function () {
-        var tab = document.getElementById('sampleTable');
-        var win = window.open('', '', 'height=700,width=700');
-        win.document.write(tab.outerHTML);
-        win.document.close();
-        win.print();
-      }
-    }
+    // var myApp = new function () {
+    //   this.printTable = function () {
+    //     var tab = document.getElementById('sampleTable');
+    //     var win = window.open('', '', 'height=700,width=700');
+    //     win.document.write(tab.outerHTML);
+    //     win.document.close();
+    //     win.print();
+    //   }
+    // }
     //     //Sao chép dữ liệu
     //     var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
 
@@ -233,9 +233,9 @@
 
 
     //Modal
-    $("#show-emp").on("click", function () {
-      $("#ModalUP").modal({ backdrop: false, keyboard: false })
-    });
+    // $("#show-emp").on("click", function () {
+    //   $("#ModalUP").modal({ backdrop: false, keyboard: false })
+    // });
   </script>
 </body>
 

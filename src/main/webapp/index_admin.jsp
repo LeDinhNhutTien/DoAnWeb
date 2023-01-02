@@ -37,7 +37,7 @@
 
 
       <!-- User Menu-->
-      <li><a class="app-nav__item" href="index.jsp"><i class='bx bx-log-out bx-rotate-180'></i> </a>
+      <li><a class="app-nav__item" href="home"><i class='bx bx-log-out bx-rotate-180'></i> </a>
 
       </li>
     </ul>
@@ -59,14 +59,14 @@
     </div>
     <div class="row">
       <!--Left-->
-      <div class="col-md-12 col-lg-6">
+      <div class="col-md-12 ">
         <div class="row">
        <!-- col-6 -->
        <div class="col-md-6">
         <div class="widget-small primary coloured-icon"><i class='icon bx bxs-user-account fa-3x'></i>
           <div class="info">
             <h4>Tổng khách hàng</h4>
-            <p><b>0 khách hàng</b></p>
+            <p><b>${totalCustomer} khách hàng</b></p>
             <p class="info-tong">Tổng số khách hàng được quản lý.</p>
           </div>
         </div>
@@ -76,7 +76,7 @@
             <div class="widget-small info coloured-icon"><i class='icon bx bxs-data fa-3x'></i>
               <div class="info">
                 <h4>Tổng sản phẩm</h4>
-                <p><b>0 sản phẩm</b></p>
+                <p><b>${totalProduct} sản phẩm</b></p>
                 <p class="info-tong">Tổng số sản phẩm được quản lý.</p>
               </div>
             </div>
@@ -86,36 +86,46 @@
             <div class="widget-small warning coloured-icon"><i class='icon bx bxs-shopping-bags fa-3x'></i>
               <div class="info">
                 <h4>Tổng đơn hàng</h4>
-                <p><b>0 đơn hàng</b></p>
-                <p class="info-tong">Tổng số hóa đơn bán hàng trong tháng.</p>
+                <p><b>${totalOder} đơn hàng</b></p>
+                <p class="info-tong">Tổng số hóa đơn bán hàng</p>
               </div>
             </div>
           </div>
+            <!-- col-6 -->
+            <div class="col-md-6">
+                <div class="widget-small warning coloured-icon"><i class='icon bx bxs-shopping-bags fa-3x'></i>
+                    <div class="info">
+                        <h4>Tổng doanh thu</h4>
+                        <p><b>${totalDoanhThu} VNĐ</b></p>
+                        <p class="info-tong">Tổng số doanh thu bán hàng</p>
+                    </div>
+                </div>
+            </div>
            <!-- col-6 -->
-          <div class="col-md-6">
-            <div class="widget-small danger coloured-icon"><i class='icon bx bxs-error-alt fa-3x'></i>
-              <div class="info">
-                <h4>Sắp hết hàng</h4>
-                <p><b>0 sản phẩm</b></p>
-                <p class="info-tong">Số sản phẩm cảnh báo hết cần nhập thêm.</p>
-              </div>
-            </div>
-          </div>
+<%--          <div class="col-md-6">--%>
+<%--            <div class="widget-small danger coloured-icon"><i class='icon bx bxs-error-alt fa-3x'></i>--%>
+<%--              <div class="info">--%>
+<%--                <h4>Sắp hết hàng</h4>--%>
+<%--                <p><b>0 sản phẩm</b></p>--%>
+<%--                <p class="info-tong">Số sản phẩm cảnh báo hết cần nhập thêm.</p>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+<%--          </div>--%>
            <!-- col-12 -->
-           <div class="col-md-12">
-            <div class="tile">
-                <h3 class="tile-title">Tình trạng đơn hàng</h3>
-              <div>
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>ID đơn hàng</th>
-                      <th>Tên khách hàng</th>
-                      <th>Tổng tiền</th>
-                      <th>Trạng thái</th>
-                    </tr>
-                  </thead>
-                  <tbody>
+<%--           <div class="col-md-12">--%>
+<%--            <div class="tile">--%>
+<%--                <h3 class="tile-title">Tình trạng đơn hàng</h3>--%>
+<%--              <div>--%>
+<%--                <table class="table table-bordered">--%>
+<%--                  <thead>--%>
+<%--                    <tr>--%>
+<%--                      <th>ID đơn hàng</th>--%>
+<%--                      <th>Tên khách hàng</th>--%>
+<%--                      <th>Tổng tiền</th>--%>
+<%--                      <th>Trạng thái</th>--%>
+<%--                    </tr>--%>
+<%--                  </thead>--%>
+<%--                  <tbody>--%>
 <!--                    <tr>-->
 <!--                      <td>AL3947</td>-->
 <!--                      <td>Phạm Thị Ngọc</td>-->
@@ -127,28 +137,28 @@
 
 
 
-                  </tbody>
-                </table>
-              </div>
-              <!-- / div trống-->
-            </div>
-           </div>
-            <!-- / col-12 -->
-             <!-- col-12 -->
-            <div class="col-md-12">
-                <div class="tile">
-                  <h3 class="tile-title">Khách hàng mới</h3>
-                <div>
-                  <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Tên khách hàng</th>
-                        <th>Ngày sinh</th>
-                        <th>Số điện thoại</th>
-                      </tr>
-                    </thead>
-                    <tbody>
+<%--                  </tbody>--%>
+<%--                </table>--%>
+<%--              </div>--%>
+<%--              <!-- / div trống-->--%>
+<%--            </div>--%>
+<%--           </div>--%>
+<%--            <!-- / col-12 -->--%>
+<%--             <!-- col-12 -->--%>
+<%--            <div class="col-md-12">--%>
+<%--                <div class="tile">--%>
+<%--                  <h3 class="tile-title">Khách hàng mới</h3>--%>
+<%--                <div>--%>
+<%--                  <table class="table table-hover">--%>
+<%--                    <thead>--%>
+<%--                      <tr>--%>
+<%--                        <th>ID</th>--%>
+<%--                        <th>Tên khách hàng</th>--%>
+<%--                        <th>Ngày sinh</th>--%>
+<%--                        <th>Số điện thoại</th>--%>
+<%--                      </tr>--%>
+<%--                    </thead>--%>
+<%--                    <tbody>--%>
 <!--                      <tr>-->
 <!--                        <td>#183</td>-->
 <!--                        <td>Hột vịt muối</td>-->
@@ -169,27 +179,27 @@
       </div>
       <!--END left-->
       <!--Right-->
-      <div class="col-md-12 col-lg-6">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="tile">
-              <h3 class="tile-title">Dữ liệu 6 tháng đầu vào</h3>
-              <div class="embed-responsive embed-responsive-16by9">
-                <canvas class="embed-responsive-item" id="lineChartDemo"></canvas>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="tile">
-              <h3 class="tile-title">Thống kê 6 tháng doanh thu</h3>
-              <div class="embed-responsive embed-responsive-16by9">
-                <canvas class="embed-responsive-item" id="barChartDemo"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
+<%--      <div class="col-md-12 col-lg-6">--%>
+<%--        <div class="row">--%>
+<%--          <div class="col-md-12">--%>
+<%--            <div class="tile">--%>
+<%--              <h3 class="tile-title">Dữ liệu 6 tháng đầu vào</h3>--%>
+<%--              <div class="embed-responsive embed-responsive-16by9">--%>
+<%--                <canvas class="embed-responsive-item" id="lineChartDemo"></canvas>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+<%--          </div>--%>
+<%--          <div class="col-md-12">--%>
+<%--            <div class="tile">--%>
+<%--              <h3 class="tile-title">Thống kê 6 tháng doanh thu</h3>--%>
+<%--              <div class="embed-responsive embed-responsive-16by9">--%>
+<%--                <canvas class="embed-responsive-item" id="barChartDemo"></canvas>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+<%--          </div>--%>
+<%--        </div>--%>
 
-      </div>
+<%--      </div>--%>
       <!--END right-->
     </div>
 

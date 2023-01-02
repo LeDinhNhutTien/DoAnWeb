@@ -278,7 +278,7 @@ public class DAO {
     // lay ra all cac don hang
     public List<ListOder> getAllOrder(){
         List<ListOder> list = new ArrayList<>();
-        String sql = "SELECT o.orderId,od.pname, u.fullname, o.dateOrder, SUM(od.quantity) AS SoLuong, o.totalmoney\n" +
+        String sql = "SELECT DISTINCT o.orderId,od.pname, u.fullname, o.dateOrder, SUM(od.quantity) AS SoLuong, o.totalmoney\n" +
                 "FROM orders o, orderdetail od, `user` u\n" +
                 "WHERE od.oid = o.orderId and u.id = o.userId\n" +
                 "GROUP BY o.orderId,od.pname, u.fullname, o.dateOrder, o.totalmoney";
@@ -430,7 +430,7 @@ public class DAO {
         }
     }
 
-    // lấy ra người dúng vs mã id  (This method for part Update User)
+    // lấy ra người dùng vs mã id  (This method for part Update User)
     public  User getUserById(int id){
         String sql ="SELECT id,`user`,pass,fullname,address,role FROM `user`WHERE id = ?";
         try {
@@ -467,9 +467,73 @@ public class DAO {
 
         }
     }
+
+   // Tính tổng sản phầm
+    public int totalProducts(){
+        String sql = "SELECT COUNT(id)  FROM products";
+        int total =0;
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+             while (rs.next()){
+                 total = rs.getInt(1);
+             }
+        }catch (Exception e){
+        }
+        return total;
+    }
+
+    // Tính tổng khách hàng
+    public int totalCustomer(){
+        String sql = "SELECT COUNT(userId)  FROM orders";
+        int total =0;
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                total = rs.getInt(1);
+            }
+        }catch (Exception e){
+        }
+        return total;
+    }
+
+    // Tính tổng đơn hàng
+    public int totalOder(){
+        String sql = "SELECT COUNT(orderId)  FROM orders";
+        int total =0;
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                total = rs.getInt(1);
+            }
+        }catch (Exception e){
+        }
+        return total;
+    }
+
+    // Tính tổng doanh thu
+    public int totalDoanhThu(){
+        String sql = "SELECT SUM(price) FROM orderdetail";
+        int total =0;
+        try {
+            conn = ConnectionUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                total = rs.getInt(1);
+            }
+        }catch (Exception e){
+        }
+        return total;
+    }
     public static void main(String[] args) {
         DAO productDAO = new DAO();
-        System.out.println(productDAO.getUserById(31));
+        System.out.println(productDAO.totalProducts());
 //        List<User> products = productDAO.getAllCustomer();
 //        for (User product : products) {
 //            System.out.println(product);

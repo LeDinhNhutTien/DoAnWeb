@@ -160,7 +160,7 @@
 
             <div class="tile">
 
-                <h3 class="tile-title">Tạo mới người dùng</h3>
+                <h3 class="tile-title">Chỉnh sửa thông tin người dùng</h3>
                 <div class="tile-body">
                     <div class="row element-button">
                     </div>

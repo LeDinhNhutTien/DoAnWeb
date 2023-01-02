@@ -146,7 +146,7 @@
                 <div class="col-12 pb-1">
                     <nav aria-label="Page navigation">
                         <ul class="pagination justify-content-center mb-3">
-<%--                             Phần phân trang --%>
+                            <%-- Phần phân trang --%>
                             <c:if test="${tag >1}">
                             <li class="page-item">
                                 <a class="page-link" href="listProducts?index=${tag-1}" aria-label="Previous">
@@ -159,6 +159,7 @@
                             <c:forEach begin="1" end="${endP}" var="i">
                           <li class="page-item ${tag == i?"active":""}"><a class="page-link" href="listProducts?index=${i}">${i}</a></li>
                             </c:forEach>
+
                             <c:if test="${tag <endP}">
                             <li class="page-item">
                                 <a class="page-link" href="listProducts?index=${tag+1}" aria-label="Next">
